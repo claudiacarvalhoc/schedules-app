@@ -1,0 +1,2 @@
+replaced:
+ @reduxjs/toolkit -> redux-thunk
