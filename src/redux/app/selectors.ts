@@ -1,3 +1,8 @@
+import { Status } from "../appState";
 import { RootState } from "../reducers";
 
-export const isLoading = (state: RootState): boolean => state.app.isLoading;
+/**
+ * Get the app status after booting.
+ * @param state
+ */
+export const bootStatus = (state: RootState): Status => state.app.status;

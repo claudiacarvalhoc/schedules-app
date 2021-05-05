@@ -1,5 +1,8 @@
-import { AppState } from "./appState";
+import { AppState, Status } from "./appState";
 
+/**
+ * This is the initial state of redux.
+ */
 export const appInitialState: AppState = {
-    isLoading: true,
+    status: Status.Loading,
 };
