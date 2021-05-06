@@ -11,4 +11,13 @@ export const appInitialState: AppState = {
     selectedScheduleId: undefined,
     schedules: [],
     scheduleLogs: [],
+    texts: {
+        header: {
+            titleText: 'Schedules',
+        },
+        schedules: {
+            buttonRetireText: 'Retire',
+            buttonUnretireText: 'Unretire',
+        }
+    }
 };

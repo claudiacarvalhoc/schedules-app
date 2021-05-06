@@ -8,6 +8,10 @@ export interface AppState extends DefaultRootState {
     selectedScheduleId?: number;
     schedules: Schedule[];
     scheduleLogs: ScheduleLog[];
+    texts: {
+        header: HeaderText;
+        schedules: ScheduleText;
+    }
 }
 
 /**
@@ -79,4 +83,21 @@ export enum LogStatus {
     Completed,
     Exception,
     Running
+}
+
+/**
+ * Texts used on Header
+ * Note: This allow us to add localisation feature easily
+ */
+export interface HeaderText {
+    titleText: string;
+}
+
+/**
+ * Texts used on Schedule
+ * Note: This allow us to add localisation feature easily
+ */
+export interface ScheduleText {
+    buttonRetireText: string;
+    buttonUnretireText: string;
 }

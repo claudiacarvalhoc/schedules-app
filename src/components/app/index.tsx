@@ -8,6 +8,7 @@ import { getSchedulesAction, getScheduleLogsAction } from '../../redux/app/actio
 import { Status } from '../../redux/appState';
 import Schedules from '../schedules';
 import ScheduleLogs from '../schedulelogs';
+import Header from '../header';
 // import cn from 'classnames';
 
 export interface AppStateProps {
@@ -35,10 +36,11 @@ const App: FC<AppProps> = ({ bootApp }) => {
   }, [bootApp]);
 
   return (
-    <>
-    <Schedules />
-    <ScheduleLogs />
-    </>
+    <div className={styles.container}>
+      <Header/>
+      <Schedules />
+      <ScheduleLogs />
+    </div>
   );
 };
 

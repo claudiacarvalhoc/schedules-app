@@ -1,6 +1,5 @@
-.app {
-    /* width: 100px;
-    height: 100px; */
+.container {
+    margin: 20px;
 }
 
 .loading {

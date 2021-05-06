@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header /> render correctly 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Connect(Header)>
+    <Header
+      dispatch={[Function]}
+      title="Schedule"
+    >
+      <div
+        className="container"
+      >
+        <h2
+          className="title"
+        >
+          Schedule
+        </h2>
+        <ForwardRef(DehazeIcon)>
+          <WithStyles(ForwardRef(SvgIcon))>
+            <ForwardRef(SvgIcon)
+              classes={
+                Object {
+                  "colorAction": "MuiSvgIcon-colorAction",
+                  "colorDisabled": "MuiSvgIcon-colorDisabled",
+                  "colorError": "MuiSvgIcon-colorError",
+                  "colorPrimary": "MuiSvgIcon-colorPrimary",
+                  "colorSecondary": "MuiSvgIcon-colorSecondary",
+                  "fontSizeInherit": "MuiSvgIcon-fontSizeInherit",
+                  "fontSizeLarge": "MuiSvgIcon-fontSizeLarge",
+                  "fontSizeSmall": "MuiSvgIcon-fontSizeSmall",
+                  "root": "MuiSvgIcon-root",
+                }
+              }
+            >
+              <svg
+                aria-hidden={true}
+                className="MuiSvgIcon-root"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M2 15.5v2h20v-2H2zm0-5v2h20v-2H2zm0-5v2h20v-2H2z"
+                />
+              </svg>
+            </ForwardRef(SvgIcon)>
+          </WithStyles(ForwardRef(SvgIcon))>
+        </ForwardRef(DehazeIcon)>
+      </div>
+    </Header>
+  </Connect(Header)>
+</Provider>
+`;
