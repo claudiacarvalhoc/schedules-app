@@ -1,8 +1,20 @@
-import { Status } from "../appState";
+import { Schedule, ScheduleLog, Status } from "../appState";
 import { RootState } from "../reducers";
 
 /**
- * Get the app status after booting.
+ * Get Fetch Status
  * @param state
  */
-export const bootStatus = (state: RootState): Status => state.app.status;
+export const getSchedulesStatus = (state: RootState): Status => state.app.status.schedules;
+export const getScheduleLogsStatus = (state: RootState): Status => state.app.status.scheduleLogs;
+
+/**
+ * Get Schedules , Selected Shedule Id
+ */
+export const getSchedules = (state: RootState): Schedule[] => state.app.schedules;
+export const getSelectedScheduleId = (state: RootState): number => state.app.selectedScheduleId;
+
+/**
+ * Get ScheduleLogs , Selected Shedule Id
+ */
+export const getScheduleLogs = (state: RootState): ScheduleLog[] => state.app.scheduleLogs;

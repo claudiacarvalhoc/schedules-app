@@ -2,34 +2,34 @@ import axios from 'axios';
 import { Action } from 'redux';
 import { config } from '../../config';
 import { AppDispatch } from '../store';
-import { APP_BOOT_SUCCESS, APP_BOOT_FAILURE, FETCH_SCHEDULE_LOGS_SUCCESS, FETCH_SCHEDULE_LOGS_FAILURE  } from "../types";
+import { FETCH_SCHEDULE_SUCCESS, FETCH_SCHEDULE_FAILURE, FETCH_SCHEDULE_LOGS_SUCCESS, FETCH_SCHEDULE_LOGS_FAILURE  } from "../types";
 
 /**
- ** This type is used when the action appBootSuccessfullyAction is dispatched.
+ ** This type is used when the action fetchScheduleSuccessfullyAction is dispatched.
  */
-export interface AppBootSuccessfullyAction extends Action<string> {
+export interface FetchScheduleSuccessfullyAction extends Action<string> {
     schedules: any[]
 }
 
 /**
  ** This action is dispatched when the schedule is sucessfully fetched.
  */
-export const appBootSuccessfullyAction = (schedules: any[]): AppBootSuccessfullyAction => ({
-    type: APP_BOOT_SUCCESS,
+export const fetchScheduleSuccessfullyAction = (schedules: any[]): FetchScheduleSuccessfullyAction => ({
+    type: FETCH_SCHEDULE_SUCCESS,
     schedules,
 });
 
 /**
- ** This type is used when the action appBootFailureAction is dispatched.
+ ** This type is used when the action fetchScheduleLogsFailureAction is dispatched.
  */
-export interface AppBootFailureAction extends Action<string> { }
+export interface FetchScheduleFailureAction extends Action<string> { }
 
 
 /**
  ** This action is dispatched when the schedule is sucessfully fetched.
  */
-export const appBootFailureAction = (): AppBootFailureAction => ({
-    type: APP_BOOT_FAILURE,
+export const fetchScheduleLogsFailureAction = (): FetchScheduleLogsFailureAction => ({
+    type: FETCH_SCHEDULE_FAILURE,
 });
 
 /**
@@ -70,11 +70,11 @@ export const getSchedulesAction = (): ((dispatch: AppDispatch) => Promise<void>)
         console.log('request -', path);
         return axios.get(`${config.host}${config.path.schedules}`)
             .then(({ data }) => {
-                dispatch(appBootSuccessfullyAction(data));
+                dispatch(fetchScheduleSuccessfullyAction(data));
             })
             .catch((error) => {
                 console.error(error);
-                dispatch(appBootFailureAction());
+                dispatch(fetchScheduleLogsFailureAction());
             });
     };
 };
@@ -97,4 +97,4 @@ export const getScheduleLogsAction = (): ((dispatch: AppDispatch) => Promise<voi
     };
 };
 
-export type AppActions = AppBootSuccessfullyAction & AppBootFailureAction & FetchScheduleLogsSuccessfullyAction & FetchScheduleLogsFailureAction;
+export type AppActions = FetchScheduleSuccessfullyAction & FetchScheduleLogsFailureAction & FetchScheduleLogsSuccessfullyAction & FetchScheduleLogsFailureAction;
