@@ -1,64 +1,82 @@
-import React, { FC } from 'react';
-import cn from 'classnames';
-import { getSchedulesStatus, getSchedules, getSelectedScheduleId } from '../../redux/app/selectors';
+import { FC } from 'react';
+import { getSchedulesStatus, getSchedules, getScheduleText } from '../../redux/app/selectors';
 import { RootState } from '../../redux/reducers';
-import { Schedule, Status } from '../../redux/appState';
+import { Schedule, ScheduleText, Status } from '../../redux/appState';
 import { AppDispatch } from '../../redux/store';
 import { connect } from 'react-redux';
 import ReactLoading from 'react-loading';
 import ScheduleItem from '../scheduleitem';
-// import styles from './schedules.module.css';
+import styles from './schedules.module.css';
+import Button from '@material-ui/core/Button';
+import { getSchedulesAction } from '../../redux/app/actions';
 
-
-export interface SchedulesOwnProps {
-    className?: string;
-}
+export interface SchedulesOwnProps { }
 
 export interface SchedulesStateProps {
   status: Status,
   schedules: Schedule[],
-  selectedScheduleId: number,
+  texts: ScheduleText;
 }
 
 export interface SchedulesDispatchProps {
-
+  fetchSchedules: () => void;
 }
 
 export type SchedulesProps = SchedulesOwnProps & SchedulesStateProps & SchedulesDispatchProps;
 
 const Schedules: FC<SchedulesProps> = ({
-  className,
   status,
+  texts,
   schedules,
-  selectedScheduleId,
+  fetchSchedules,
  }) => {
   const isLoading = status === Status.Loading;
   const isSuccessfull = status === Status.Success;
   const isFailure = status === Status.Failure;
 
+  const isEmpty = Array.isArray(schedules) && schedules.length === 0;
+
   return (
-  <>
-  <div>
+  <div className={styles.container}>
       {isLoading && (
-      <div>
-        <ReactLoading type='spin' color='#000000' height={50} width={50} />
-      </div>)}
-      {isSuccessfull && (schedules.map(n => <ScheduleItem schedule={n} />))}
-      {isFailure && (<p>Schedule cannot be fetched :(</p>)}
-    </div>
-  </>);
+        <div className={styles.loading}>
+          <ReactLoading type='spin' color='#000000' height={50} width={50} />
+        </div>)
+      }
+
+      {isFailure && (
+        <div className={styles.info}>
+          <p>{texts.errorMessageText}</p>
+          <Button
+            onClick={() => fetchSchedules()}
+            variant="contained"
+            color="primary"
+            disableElevation>
+            {texts.buttonRetryText}
+          </Button>
+        </div>
+      )}
+
+      {isSuccessfull && isEmpty &&  (
+        <div className={styles.info}>
+          <p>{texts.emptyMessageText}</p>
+        </div>
+      )}
+
+      {isSuccessfull && !isEmpty && (schedules.map(n => <ScheduleItem schedule={n} />))}
+    </div>);
  };
 
 const mapStateToProps = (state: RootState): SchedulesStateProps => ({
   status: getSchedulesStatus(state),
   schedules: getSchedules(state),
-  selectedScheduleId: getSelectedScheduleId(state),
+  texts: getScheduleText(state),
 });
 
 const mapDispatchToProps = (
     dispatch: AppDispatch
     ): SchedulesDispatchProps => ({
-  // TODO : review
+  fetchSchedules: () => dispatch(getSchedulesAction()),
 });
 
 export default connect<SchedulesStateProps, SchedulesDispatchProps>(

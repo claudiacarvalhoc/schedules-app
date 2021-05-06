@@ -71,11 +71,25 @@ exports[`<Header /> render correctly 1`] = `
         >
           <Connect(Schedules)>
             <Schedules
+              fetchSchedules={[Function]}
               schedules={Array []}
               status={0}
+              texts={
+                Object {
+                  "buttonRetireText": "Retire",
+                  "buttonRetryText": "Retry",
+                  "buttonUnretireText": "Unretire",
+                  "emptyMessageText": "No schedules available.",
+                  "errorMessageText": "Something went wrong ...",
+                }
+              }
             >
-              <div>
-                <div>
+              <div
+                className="container"
+              >
+                <div
+                  className="loading"
+                >
                   <Loading
                     color="#000000"
                     delay={0}

@@ -100,4 +100,7 @@ export interface HeaderText {
 export interface ScheduleText {
     buttonRetireText: string;
     buttonUnretireText: string;
+    errorMessageText: string;
+    buttonRetryText: string;
+    emptyMessageText: string;
 }

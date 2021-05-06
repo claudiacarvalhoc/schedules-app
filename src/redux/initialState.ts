@@ -18,6 +18,9 @@ export const appInitialState: AppState = {
         schedules: {
             buttonRetireText: 'Retire',
             buttonUnretireText: 'Unretire',
+            errorMessageText: 'Something went wrong ...',
+            buttonRetryText: 'Retry',
+            emptyMessageText: 'No schedules available.',
         }
     }
 };
