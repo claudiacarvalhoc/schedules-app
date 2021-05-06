@@ -2,30 +2,19 @@ import React, { FC, useEffect } from 'react';
 import { connect } from 'react-redux';
 import styles from './app.module.css';
 import { RootState } from '../../redux/reducers';
-import { getSchedulesStatus, getScheduleLogsStatus } from '../../redux/app/selectors';
 import { AppDispatch } from '../../redux/store';
 import { getSchedulesAction, getScheduleLogsAction } from '../../redux/app/actions';
-import { Status } from '../../redux/appState';
 import Schedules from '../schedules';
 import ScheduleLogs from '../schedulelogs';
 import Header from '../header';
-// import cn from 'classnames';
 
-export interface AppStateProps {
-}
+export interface AppStateProps { }
 
 export interface AppDispatchProps {
   bootApp: () => void;
 }
 
 export type AppProps = AppStateProps & AppDispatchProps;
-
-  /**
-   *
-   * display: flex;
-   * justify-content: center;
-   * align-items: center;
-  */
 
 const App: FC<AppProps> = ({ bootApp }) => {
   /**
@@ -38,8 +27,10 @@ const App: FC<AppProps> = ({ bootApp }) => {
   return (
     <div className={styles.container}>
       <Header/>
-      <Schedules />
-      <ScheduleLogs />
+      <div className={styles.content}>
+        <Schedules />
+        <ScheduleLogs />
+      </div>
     </div>
   );
 };

@@ -73,7 +73,6 @@ export const getSchedulesAction = (): ((dispatch: AppDispatch) => Promise<void>)
                 dispatch(fetchScheduleSuccessfullyAction(data));
             })
             .catch((error) => {
-                console.error(error);
                 dispatch(fetchScheduleLogsFailureAction());
             });
     };
@@ -91,7 +90,6 @@ export const getScheduleLogsAction = (): ((dispatch: AppDispatch) => Promise<voi
                 dispatch(fetchScheduleLogsSuccessfullyAction(data));
             })
             .catch((error) => {
-                console.error(error);
                 dispatch(fetchScheduleLogsFailure());
             });
     };
