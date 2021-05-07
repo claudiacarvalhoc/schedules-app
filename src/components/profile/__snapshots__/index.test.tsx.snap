@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header /> render correctly with color orange 1`] = `
+<WithStyles(ForwardRef(Avatar))
+  className="orange"
+>
+  T
+</WithStyles(ForwardRef(Avatar))>
+`;
+
+exports[`<Header /> render correctly with color purple 1`] = `
+<WithStyles(ForwardRef(Avatar))
+  className="purple"
+>
+  T
+</WithStyles(ForwardRef(Avatar))>
+`;
