@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header /> render correctly 1`] = `
+<WithStyles(ForwardRef(Button))
+  color="secondary"
+  onClick={[Function]}
+  size="small"
+  variant="outlined"
+>
+  Retire
+</WithStyles(ForwardRef(Button))>
+`;
