@@ -4,6 +4,11 @@ import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import { TimeProps } from './index';
 
+const props: TimeProps = {
+    label: 'Start',
+    time: 'April 28 2021',
+};
+
 const getShallowWrapper = (props: TimeProps) => {
     return shallow(
         <Time {...props} />
@@ -12,10 +17,6 @@ const getShallowWrapper = (props: TimeProps) => {
 
 describe('<Time />', () => {
     it('render correctly', () => {
-        const props = {
-            label: 'Start',
-            time: 'April 28 2021',
-        };
         const component = getShallowWrapper(props);
         expect(toJson(component)).toMatchSnapshot();
     });

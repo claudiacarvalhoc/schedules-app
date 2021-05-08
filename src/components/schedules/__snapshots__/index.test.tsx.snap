@@ -255,50 +255,6 @@ exports[`<Schedules /> render correctly when schedules has an array data and dat
   <Connect(Schedules)>
     <Schedules
       fetchSchedules={[Function]}
-      schedules={Array []}
-      status={1}
-      texts={
-        Object {
-          "buttonRetireText": "Retire",
-          "buttonRetryText": "Retry",
-          "buttonUnretireText": "Unretire",
-          "emptyMessageText": "No schedules available.",
-          "errorMessageText": "Something went wrong ...",
-        }
-      }
-    >
-      <div
-        className="container"
-      >
-        <div
-          className="info"
-        >
-          <p>
-            No schedules available.
-          </p>
-        </div>
-      </div>
-    </Schedules>
-  </Connect(Schedules)>
-</Provider>
-`;
-
-exports[`<Schedules /> render correctly when schedules is empty and data was saved sucessfully 1`] = `
-<Provider
-  store={
-    Object {
-      "clearActions": [Function],
-      "dispatch": [Function],
-      "getActions": [Function],
-      "getState": [Function],
-      "replaceReducer": [Function],
-      "subscribe": [Function],
-    }
-  }
->
-  <Connect(Schedules)>
-    <Schedules
-      fetchSchedules={[Function]}
       schedules={
         Array [
           Object {
@@ -778,6 +734,50 @@ exports[`<Schedules /> render correctly when schedules is empty and data was sav
             </div>
           </ScheduleItem>
         </Connect(ScheduleItem)>
+      </div>
+    </Schedules>
+  </Connect(Schedules)>
+</Provider>
+`;
+
+exports[`<Schedules /> render correctly when schedules is empty and data was saved sucessfully 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Connect(Schedules)>
+    <Schedules
+      fetchSchedules={[Function]}
+      schedules={Array []}
+      status={1}
+      texts={
+        Object {
+          "buttonRetireText": "Retire",
+          "buttonRetryText": "Retry",
+          "buttonUnretireText": "Unretire",
+          "emptyMessageText": "No schedules available.",
+          "errorMessageText": "Something went wrong ...",
+        }
+      }
+    >
+      <div
+        className="container"
+      >
+        <div
+          className="info"
+        >
+          <p>
+            No schedules available.
+          </p>
+        </div>
       </div>
     </Schedules>
   </Connect(Schedules)>

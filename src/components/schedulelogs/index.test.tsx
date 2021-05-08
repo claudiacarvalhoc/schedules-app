@@ -19,7 +19,10 @@ const scheduleLogItem: ScheduleLogState = {
     scheduleId: 23802893,
 };
 
-const getMountWrapper = (scheduleLogsStatus: StatusState, scheduleLogsData: ScheduleLogState[] = []) => {
+const getMountWrapper = (
+    scheduleLogsStatus: StatusState,
+    scheduleLogsData: ScheduleLogState[]
+) => {
     const store = configureMockStore([thunk])({
       app: {
         ...appInitialState,
@@ -39,7 +42,7 @@ const getMountWrapper = (scheduleLogsStatus: StatusState, scheduleLogsData: Sche
 
 describe('<ScheduleLogs />', () => {
     it('render correctly when component is loading', () => {
-        const component = getMountWrapper(StatusState.Loading);
+        const component = getMountWrapper(StatusState.Loading, []);
         expect(toJson(component)).toMatchSnapshot();
     });
     it('render correctly when schedule logs has an array data and data was saved sucessfully', () => {
@@ -55,7 +58,7 @@ describe('<ScheduleLogs />', () => {
         expect(toJson(component)).toMatchSnapshot();
     });
     it('render correctly when schedule logs couldn\'t be fetched and data was saved as failure', () => {
-        const component = getMountWrapper(StatusState.Failure);
+        const component = getMountWrapper(StatusState.Failure, []);
         expect(toJson(component)).toMatchSnapshot();
     });
 });

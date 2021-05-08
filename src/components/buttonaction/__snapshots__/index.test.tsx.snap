@@ -2,7 +2,7 @@
 
 exports[`<Header /> render correctly 1`] = `
 <WithStyles(ForwardRef(Button))
-  color="secondary"
+  color="primary"
   onClick={[Function]}
   size="small"
   variant="outlined"

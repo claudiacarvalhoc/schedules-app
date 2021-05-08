@@ -37,9 +37,17 @@ const schedule: ScheduleState = {
     timePeriod: 30,
 };
 
+const texts: ScheduleTextState = {
+    buttonRetireText: 'Retire',
+    buttonUnretireText: 'Unretire',
+    errorMessageText: 'Something went wrong ...',
+    buttonRetryText: 'Retry',
+    emptyMessageText: 'No schedules available.',
+};
+
 const getMountWrapper = (
     schedule: ScheduleState,
-    scheduleTexts: Partial<ScheduleTextState> = {}
+    scheduleTexts: ScheduleTextState,
 ) => {
     const props = {
         schedule,
@@ -68,7 +76,7 @@ const getMountWrapper = (
 
 describe('<ScheduleItem />', () => {
     it('render correctly', () => {
-        const component = getMountWrapper(schedule);
+        const component = getMountWrapper(schedule, texts);
         expect(toJson(component)).toMatchSnapshot();
     });
     // WARNING: the idea here was to test the clicks on "retire" / "unretire" button and click on card

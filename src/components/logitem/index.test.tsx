@@ -26,7 +26,7 @@ const getMountWrapper = (props: LogItemProps) => {
 
 describe('<LogItem />', () => {
     it('render correctly', () => {
-        const props = {
+        const props: LogItemProps = {
             item: {
                 id: 1193520,
                 startTime: new Date("2021-12-18T06:35:09.604Z"),

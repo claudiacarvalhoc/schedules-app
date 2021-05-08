@@ -1,17 +1,17 @@
 import React from 'react';
-import Profile from './index';
+import Profile, { ProfileProps } from './index';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
-const getShallowWrapper = ({ letter, color }) => {
+const getShallowWrapper = (props: ProfileProps) => {
     return shallow(
-        <Profile letter={letter} color={color} />
+        <Profile {...props} />
     );
   };
 
 describe('<Profile />', () => {
     it('render correctly with color orange', () => {
-        const props = {
+        const props: ProfileProps = {
             letter: 'T',
             color: 'orange'
         };
@@ -19,7 +19,7 @@ describe('<Profile />', () => {
         expect(toJson(component)).toMatchSnapshot();
     });
     it('render correctly with color purple', () => {
-        const props = {
+        const props: ProfileProps = {
             letter: 'T',
             color: 'purple'
         };

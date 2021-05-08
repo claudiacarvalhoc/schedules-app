@@ -6,11 +6,11 @@ import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 import { Provider } from 'react-redux';
 import configureMockStore from 'redux-mock-store';
 import { appInitialState } from '../../redux/initialState';
-import { HeaderText } from '../../redux/appState';
+import { HeaderTextState } from '../../redux/appState';
 
 Enzyme.configure({ adapter: new Adapter() });
 
-const getMountWrapper = (headerText: HeaderText) => {
+const getMountWrapper = (headerText: HeaderTextState) => {
     const store = configureMockStore()({
       app: {
         ...appInitialState,
@@ -29,7 +29,7 @@ const getMountWrapper = (headerText: HeaderText) => {
 
 describe('<Header />', () => {
     it('render correctly', () => {
-        const props: HeaderText = {
+        const props: HeaderTextState = {
             titleText: 'Schedule',
         };
         const component = getMountWrapper(props);

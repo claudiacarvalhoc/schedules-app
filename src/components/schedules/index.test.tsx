@@ -30,7 +30,10 @@ const schedule: ScheduleState = {
     timePeriod: 30,
 };
 
-const getMountWrapper = (schedulesStatus: StatusState, schedulesData: ScheduleState[] = undefined) => {
+const getMountWrapper = (
+    schedulesStatus: StatusState,
+    schedulesData: ScheduleState[]
+) => {
     const store = configureMockStore([thunk])({
       app: {
         ...appInitialState,
@@ -46,27 +49,27 @@ const getMountWrapper = (schedulesStatus: StatusState, schedulesData: ScheduleSt
             <Schedules />
         </Provider>
     );
-  };
+};
 
 describe('<Schedules />', () => {
     it('render correctly when component is loading', () => {
-        const component = getMountWrapper(StatusState.Loading);
+        const component = getMountWrapper(StatusState.Loading, []);
         expect(toJson(component)).toMatchSnapshot();
     });
     it('render correctly when schedules has an array data and data was saved sucessfully', () => {
-        const component = getMountWrapper(StatusState.Success);
-        expect(toJson(component)).toMatchSnapshot();
-    });
-    it('render correctly when schedules is empty and data was saved sucessfully', () => {
         const component = getMountWrapper(StatusState.Success, [schedule]);
         expect(toJson(component)).toMatchSnapshot();
     });
-    it('render correctly when schedules is undefined and data was saved sucessfully', () => {
+    it('render correctly when schedules is empty and data was saved sucessfully', () => {
         const component = getMountWrapper(StatusState.Success, []);
         expect(toJson(component)).toMatchSnapshot();
     });
+    it('render correctly when schedules is undefined and data was saved sucessfully', () => {
+        const component = getMountWrapper(StatusState.Success, undefined);
+        expect(toJson(component)).toMatchSnapshot();
+    });
     it('render correctly when schedules couldn\'t be fetched and data was saved as failure', () => {
-        const component = getMountWrapper(StatusState.Failure);
+        const component = getMountWrapper(StatusState.Failure, []);
         expect(toJson(component)).toMatchSnapshot();
     });
 });

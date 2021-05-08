@@ -64,7 +64,15 @@ exports[`<ScheduleItem /> render correctly 1`] = `
           "timePeriod": 30,
         }
       }
-      texts={Object {}}
+      texts={
+        Object {
+          "buttonRetireText": "Retire",
+          "buttonRetryText": "Retry",
+          "buttonUnretireText": "Unretire",
+          "emptyMessageText": "No schedules available.",
+          "errorMessageText": "Something went wrong ...",
+        }
+      }
       unretire={[Function]}
       updateSelectedId={[Function]}
     >
@@ -308,6 +316,7 @@ exports[`<ScheduleItem /> render correctly 1`] = `
                         <ButtonAction
                           data-test="action_40469125_retire"
                           onClick={[Function]}
+                          text="Retire"
                           type="secondary"
                         >
                           <WithStyles(ForwardRef(Button))
@@ -400,7 +409,9 @@ exports[`<ScheduleItem /> render correctly 1`] = `
                                   >
                                     <span
                                       className="MuiButton-label"
-                                    />
+                                    >
+                                      Retire
+                                    </span>
                                     <WithStyles(memo)
                                       center={false}
                                     >
