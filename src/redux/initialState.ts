@@ -21,7 +21,16 @@ export const appInitialState: AppState = {
             errorMessageText: 'Something went wrong ...',
             buttonRetryText: 'Retry',
             emptyMessageText: 'No schedules available.',
-        }
+        },
+        scheduleLogs: {
+          errorMessageText: 'Something went wrong ...',
+          buttonRetryText: 'Retry',
+          emptyMessageText: 'No schedules logs available.',
+        },
+        log: {
+          labelStartTime: 'Start',
+          labelEndTime: 'End',
+        },
     }
 };
 

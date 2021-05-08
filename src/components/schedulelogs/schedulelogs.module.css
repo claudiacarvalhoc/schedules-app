@@ -1,1 +1,8 @@
 
+.schedulelogs {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    height: 650px;
+    flex-wrap: wrap;
+}

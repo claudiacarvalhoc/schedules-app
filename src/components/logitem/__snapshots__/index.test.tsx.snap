@@ -1,0 +1,482 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LogItem /> render correctly 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Connect(LogItem)
+    item={
+      Object {
+        "endTime": 2021-07-12T23:43:39.395Z,
+        "id": 1193520,
+        "scheduleId": 23802893,
+        "serverName": "esse ad deserunt",
+        "startTime": 2021-12-18T06:35:09.604Z,
+        "status": 4,
+      }
+    }
+    texts={
+      Object {
+        "labelEndTime": "End",
+        "labelStartTime": "Start",
+      }
+    }
+  >
+    <LogItem
+      dispatch={[Function]}
+      item={
+        Object {
+          "endTime": 2021-07-12T23:43:39.395Z,
+          "id": 1193520,
+          "scheduleId": 23802893,
+          "serverName": "esse ad deserunt",
+          "startTime": 2021-12-18T06:35:09.604Z,
+          "status": 4,
+        }
+      }
+      texts={
+        Object {
+          "labelEndTime": "End",
+          "labelStartTime": "Start",
+        }
+      }
+    >
+      <WithStyles(ForwardRef(Card))
+        className="logs"
+        variant="outlined"
+      >
+        <ForwardRef(Card)
+          className="logs"
+          classes={
+            Object {
+              "root": "MuiCard-root",
+            }
+          }
+          variant="outlined"
+        >
+          <WithStyles(ForwardRef(Paper))
+            className="MuiCard-root logs"
+            elevation={1}
+            variant="outlined"
+          >
+            <ForwardRef(Paper)
+              className="MuiCard-root logs"
+              classes={
+                Object {
+                  "elevation0": "MuiPaper-elevation0",
+                  "elevation1": "MuiPaper-elevation1",
+                  "elevation10": "MuiPaper-elevation10",
+                  "elevation11": "MuiPaper-elevation11",
+                  "elevation12": "MuiPaper-elevation12",
+                  "elevation13": "MuiPaper-elevation13",
+                  "elevation14": "MuiPaper-elevation14",
+                  "elevation15": "MuiPaper-elevation15",
+                  "elevation16": "MuiPaper-elevation16",
+                  "elevation17": "MuiPaper-elevation17",
+                  "elevation18": "MuiPaper-elevation18",
+                  "elevation19": "MuiPaper-elevation19",
+                  "elevation2": "MuiPaper-elevation2",
+                  "elevation20": "MuiPaper-elevation20",
+                  "elevation21": "MuiPaper-elevation21",
+                  "elevation22": "MuiPaper-elevation22",
+                  "elevation23": "MuiPaper-elevation23",
+                  "elevation24": "MuiPaper-elevation24",
+                  "elevation3": "MuiPaper-elevation3",
+                  "elevation4": "MuiPaper-elevation4",
+                  "elevation5": "MuiPaper-elevation5",
+                  "elevation6": "MuiPaper-elevation6",
+                  "elevation7": "MuiPaper-elevation7",
+                  "elevation8": "MuiPaper-elevation8",
+                  "elevation9": "MuiPaper-elevation9",
+                  "outlined": "MuiPaper-outlined",
+                  "root": "MuiPaper-root",
+                  "rounded": "MuiPaper-rounded",
+                }
+              }
+              elevation={1}
+              variant="outlined"
+            >
+              <div
+                className="MuiPaper-root MuiCard-root logs MuiPaper-outlined MuiPaper-rounded"
+              >
+                <WithStyles(ForwardRef(CardContent))
+                  className="content"
+                >
+                  <ForwardRef(CardContent)
+                    className="content"
+                    classes={
+                      Object {
+                        "root": "MuiCardContent-root",
+                      }
+                    }
+                  >
+                    <div
+                      className="MuiCardContent-root content"
+                    >
+                      <div
+                        className="header"
+                      >
+                        <WithStyles(ForwardRef(Typography))
+                          className="title"
+                          color="primary"
+                          gutterBottom={true}
+                          noWrap={true}
+                        >
+                          <ForwardRef(Typography)
+                            className="title"
+                            classes={
+                              Object {
+                                "alignCenter": "MuiTypography-alignCenter",
+                                "alignJustify": "MuiTypography-alignJustify",
+                                "alignLeft": "MuiTypography-alignLeft",
+                                "alignRight": "MuiTypography-alignRight",
+                                "body1": "MuiTypography-body1",
+                                "body2": "MuiTypography-body2",
+                                "button": "MuiTypography-button",
+                                "caption": "MuiTypography-caption",
+                                "colorError": "MuiTypography-colorError",
+                                "colorInherit": "MuiTypography-colorInherit",
+                                "colorPrimary": "MuiTypography-colorPrimary",
+                                "colorSecondary": "MuiTypography-colorSecondary",
+                                "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                                "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                                "displayBlock": "MuiTypography-displayBlock",
+                                "displayInline": "MuiTypography-displayInline",
+                                "gutterBottom": "MuiTypography-gutterBottom",
+                                "h1": "MuiTypography-h1",
+                                "h2": "MuiTypography-h2",
+                                "h3": "MuiTypography-h3",
+                                "h4": "MuiTypography-h4",
+                                "h5": "MuiTypography-h5",
+                                "h6": "MuiTypography-h6",
+                                "noWrap": "MuiTypography-noWrap",
+                                "overline": "MuiTypography-overline",
+                                "paragraph": "MuiTypography-paragraph",
+                                "root": "MuiTypography-root",
+                                "srOnly": "MuiTypography-srOnly",
+                                "subtitle1": "MuiTypography-subtitle1",
+                                "subtitle2": "MuiTypography-subtitle2",
+                              }
+                            }
+                            color="primary"
+                            gutterBottom={true}
+                            noWrap={true}
+                          >
+                            <p
+                              className="MuiTypography-root title MuiTypography-body1 MuiTypography-colorPrimary MuiTypography-noWrap MuiTypography-gutterBottom"
+                            >
+                              esse ad deserunt
+                            </p>
+                          </ForwardRef(Typography)>
+                        </WithStyles(ForwardRef(Typography))>
+                        <WithStyles(ForwardRef(Chip))
+                          label={4}
+                          size="small"
+                        >
+                          <ForwardRef(Chip)
+                            classes={
+                              Object {
+                                "avatar": "MuiChip-avatar",
+                                "avatarColorPrimary": "MuiChip-avatarColorPrimary",
+                                "avatarColorSecondary": "MuiChip-avatarColorSecondary",
+                                "avatarSmall": "MuiChip-avatarSmall",
+                                "clickable": "MuiChip-clickable",
+                                "clickableColorPrimary": "MuiChip-clickableColorPrimary",
+                                "clickableColorSecondary": "MuiChip-clickableColorSecondary",
+                                "colorPrimary": "MuiChip-colorPrimary",
+                                "colorSecondary": "MuiChip-colorSecondary",
+                                "deletable": "MuiChip-deletable",
+                                "deletableColorPrimary": "MuiChip-deletableColorPrimary",
+                                "deletableColorSecondary": "MuiChip-deletableColorSecondary",
+                                "deleteIcon": "MuiChip-deleteIcon",
+                                "deleteIconColorPrimary": "MuiChip-deleteIconColorPrimary",
+                                "deleteIconColorSecondary": "MuiChip-deleteIconColorSecondary",
+                                "deleteIconOutlinedColorPrimary": "MuiChip-deleteIconOutlinedColorPrimary",
+                                "deleteIconOutlinedColorSecondary": "MuiChip-deleteIconOutlinedColorSecondary",
+                                "deleteIconSmall": "MuiChip-deleteIconSmall",
+                                "disabled": "Mui-disabled",
+                                "icon": "MuiChip-icon",
+                                "iconColorPrimary": "MuiChip-iconColorPrimary",
+                                "iconColorSecondary": "MuiChip-iconColorSecondary",
+                                "iconSmall": "MuiChip-iconSmall",
+                                "label": "MuiChip-label",
+                                "labelSmall": "MuiChip-labelSmall",
+                                "outlined": "MuiChip-outlined",
+                                "outlinedPrimary": "MuiChip-outlinedPrimary",
+                                "outlinedSecondary": "MuiChip-outlinedSecondary",
+                                "root": "MuiChip-root",
+                                "sizeSmall": "MuiChip-sizeSmall",
+                              }
+                            }
+                            label={4}
+                            size="small"
+                          >
+                            <div
+                              className="MuiChip-root MuiChip-sizeSmall"
+                              onKeyDown={[Function]}
+                              onKeyUp={[Function]}
+                            >
+                              <span
+                                className="MuiChip-label MuiChip-labelSmall"
+                              >
+                                4
+                              </span>
+                            </div>
+                          </ForwardRef(Chip)>
+                        </WithStyles(ForwardRef(Chip))>
+                      </div>
+                      <div
+                        className="times"
+                      >
+                        <Time
+                          label="Start"
+                          time="December 18 2021"
+                        >
+                          <div>
+                            <WithStyles(ForwardRef(Typography))
+                              className="label"
+                              gutterBottom={true}
+                              variant="overline"
+                            >
+                              <ForwardRef(Typography)
+                                className="label"
+                                classes={
+                                  Object {
+                                    "alignCenter": "MuiTypography-alignCenter",
+                                    "alignJustify": "MuiTypography-alignJustify",
+                                    "alignLeft": "MuiTypography-alignLeft",
+                                    "alignRight": "MuiTypography-alignRight",
+                                    "body1": "MuiTypography-body1",
+                                    "body2": "MuiTypography-body2",
+                                    "button": "MuiTypography-button",
+                                    "caption": "MuiTypography-caption",
+                                    "colorError": "MuiTypography-colorError",
+                                    "colorInherit": "MuiTypography-colorInherit",
+                                    "colorPrimary": "MuiTypography-colorPrimary",
+                                    "colorSecondary": "MuiTypography-colorSecondary",
+                                    "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                                    "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                                    "displayBlock": "MuiTypography-displayBlock",
+                                    "displayInline": "MuiTypography-displayInline",
+                                    "gutterBottom": "MuiTypography-gutterBottom",
+                                    "h1": "MuiTypography-h1",
+                                    "h2": "MuiTypography-h2",
+                                    "h3": "MuiTypography-h3",
+                                    "h4": "MuiTypography-h4",
+                                    "h5": "MuiTypography-h5",
+                                    "h6": "MuiTypography-h6",
+                                    "noWrap": "MuiTypography-noWrap",
+                                    "overline": "MuiTypography-overline",
+                                    "paragraph": "MuiTypography-paragraph",
+                                    "root": "MuiTypography-root",
+                                    "srOnly": "MuiTypography-srOnly",
+                                    "subtitle1": "MuiTypography-subtitle1",
+                                    "subtitle2": "MuiTypography-subtitle2",
+                                  }
+                                }
+                                gutterBottom={true}
+                                variant="overline"
+                              >
+                                <span
+                                  className="MuiTypography-root label MuiTypography-overline MuiTypography-gutterBottom"
+                                >
+                                  Start
+                                </span>
+                              </ForwardRef(Typography)>
+                            </WithStyles(ForwardRef(Typography))>
+                            <div>
+                              <WithStyles(ForwardRef(Chip))
+                                label="December 18 2021"
+                                size="small"
+                              >
+                                <ForwardRef(Chip)
+                                  classes={
+                                    Object {
+                                      "avatar": "MuiChip-avatar",
+                                      "avatarColorPrimary": "MuiChip-avatarColorPrimary",
+                                      "avatarColorSecondary": "MuiChip-avatarColorSecondary",
+                                      "avatarSmall": "MuiChip-avatarSmall",
+                                      "clickable": "MuiChip-clickable",
+                                      "clickableColorPrimary": "MuiChip-clickableColorPrimary",
+                                      "clickableColorSecondary": "MuiChip-clickableColorSecondary",
+                                      "colorPrimary": "MuiChip-colorPrimary",
+                                      "colorSecondary": "MuiChip-colorSecondary",
+                                      "deletable": "MuiChip-deletable",
+                                      "deletableColorPrimary": "MuiChip-deletableColorPrimary",
+                                      "deletableColorSecondary": "MuiChip-deletableColorSecondary",
+                                      "deleteIcon": "MuiChip-deleteIcon",
+                                      "deleteIconColorPrimary": "MuiChip-deleteIconColorPrimary",
+                                      "deleteIconColorSecondary": "MuiChip-deleteIconColorSecondary",
+                                      "deleteIconOutlinedColorPrimary": "MuiChip-deleteIconOutlinedColorPrimary",
+                                      "deleteIconOutlinedColorSecondary": "MuiChip-deleteIconOutlinedColorSecondary",
+                                      "deleteIconSmall": "MuiChip-deleteIconSmall",
+                                      "disabled": "Mui-disabled",
+                                      "icon": "MuiChip-icon",
+                                      "iconColorPrimary": "MuiChip-iconColorPrimary",
+                                      "iconColorSecondary": "MuiChip-iconColorSecondary",
+                                      "iconSmall": "MuiChip-iconSmall",
+                                      "label": "MuiChip-label",
+                                      "labelSmall": "MuiChip-labelSmall",
+                                      "outlined": "MuiChip-outlined",
+                                      "outlinedPrimary": "MuiChip-outlinedPrimary",
+                                      "outlinedSecondary": "MuiChip-outlinedSecondary",
+                                      "root": "MuiChip-root",
+                                      "sizeSmall": "MuiChip-sizeSmall",
+                                    }
+                                  }
+                                  label="December 18 2021"
+                                  size="small"
+                                >
+                                  <div
+                                    className="MuiChip-root MuiChip-sizeSmall"
+                                    onKeyDown={[Function]}
+                                    onKeyUp={[Function]}
+                                  >
+                                    <span
+                                      className="MuiChip-label MuiChip-labelSmall"
+                                    >
+                                      December 18 2021
+                                    </span>
+                                  </div>
+                                </ForwardRef(Chip)>
+                              </WithStyles(ForwardRef(Chip))>
+                            </div>
+                          </div>
+                        </Time>
+                        <Time
+                          label="End"
+                          time="July 13 2021"
+                        >
+                          <div>
+                            <WithStyles(ForwardRef(Typography))
+                              className="label"
+                              gutterBottom={true}
+                              variant="overline"
+                            >
+                              <ForwardRef(Typography)
+                                className="label"
+                                classes={
+                                  Object {
+                                    "alignCenter": "MuiTypography-alignCenter",
+                                    "alignJustify": "MuiTypography-alignJustify",
+                                    "alignLeft": "MuiTypography-alignLeft",
+                                    "alignRight": "MuiTypography-alignRight",
+                                    "body1": "MuiTypography-body1",
+                                    "body2": "MuiTypography-body2",
+                                    "button": "MuiTypography-button",
+                                    "caption": "MuiTypography-caption",
+                                    "colorError": "MuiTypography-colorError",
+                                    "colorInherit": "MuiTypography-colorInherit",
+                                    "colorPrimary": "MuiTypography-colorPrimary",
+                                    "colorSecondary": "MuiTypography-colorSecondary",
+                                    "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                                    "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                                    "displayBlock": "MuiTypography-displayBlock",
+                                    "displayInline": "MuiTypography-displayInline",
+                                    "gutterBottom": "MuiTypography-gutterBottom",
+                                    "h1": "MuiTypography-h1",
+                                    "h2": "MuiTypography-h2",
+                                    "h3": "MuiTypography-h3",
+                                    "h4": "MuiTypography-h4",
+                                    "h5": "MuiTypography-h5",
+                                    "h6": "MuiTypography-h6",
+                                    "noWrap": "MuiTypography-noWrap",
+                                    "overline": "MuiTypography-overline",
+                                    "paragraph": "MuiTypography-paragraph",
+                                    "root": "MuiTypography-root",
+                                    "srOnly": "MuiTypography-srOnly",
+                                    "subtitle1": "MuiTypography-subtitle1",
+                                    "subtitle2": "MuiTypography-subtitle2",
+                                  }
+                                }
+                                gutterBottom={true}
+                                variant="overline"
+                              >
+                                <span
+                                  className="MuiTypography-root label MuiTypography-overline MuiTypography-gutterBottom"
+                                >
+                                  End
+                                </span>
+                              </ForwardRef(Typography)>
+                            </WithStyles(ForwardRef(Typography))>
+                            <div>
+                              <WithStyles(ForwardRef(Chip))
+                                label="July 13 2021"
+                                size="small"
+                              >
+                                <ForwardRef(Chip)
+                                  classes={
+                                    Object {
+                                      "avatar": "MuiChip-avatar",
+                                      "avatarColorPrimary": "MuiChip-avatarColorPrimary",
+                                      "avatarColorSecondary": "MuiChip-avatarColorSecondary",
+                                      "avatarSmall": "MuiChip-avatarSmall",
+                                      "clickable": "MuiChip-clickable",
+                                      "clickableColorPrimary": "MuiChip-clickableColorPrimary",
+                                      "clickableColorSecondary": "MuiChip-clickableColorSecondary",
+                                      "colorPrimary": "MuiChip-colorPrimary",
+                                      "colorSecondary": "MuiChip-colorSecondary",
+                                      "deletable": "MuiChip-deletable",
+                                      "deletableColorPrimary": "MuiChip-deletableColorPrimary",
+                                      "deletableColorSecondary": "MuiChip-deletableColorSecondary",
+                                      "deleteIcon": "MuiChip-deleteIcon",
+                                      "deleteIconColorPrimary": "MuiChip-deleteIconColorPrimary",
+                                      "deleteIconColorSecondary": "MuiChip-deleteIconColorSecondary",
+                                      "deleteIconOutlinedColorPrimary": "MuiChip-deleteIconOutlinedColorPrimary",
+                                      "deleteIconOutlinedColorSecondary": "MuiChip-deleteIconOutlinedColorSecondary",
+                                      "deleteIconSmall": "MuiChip-deleteIconSmall",
+                                      "disabled": "Mui-disabled",
+                                      "icon": "MuiChip-icon",
+                                      "iconColorPrimary": "MuiChip-iconColorPrimary",
+                                      "iconColorSecondary": "MuiChip-iconColorSecondary",
+                                      "iconSmall": "MuiChip-iconSmall",
+                                      "label": "MuiChip-label",
+                                      "labelSmall": "MuiChip-labelSmall",
+                                      "outlined": "MuiChip-outlined",
+                                      "outlinedPrimary": "MuiChip-outlinedPrimary",
+                                      "outlinedSecondary": "MuiChip-outlinedSecondary",
+                                      "root": "MuiChip-root",
+                                      "sizeSmall": "MuiChip-sizeSmall",
+                                    }
+                                  }
+                                  label="July 13 2021"
+                                  size="small"
+                                >
+                                  <div
+                                    className="MuiChip-root MuiChip-sizeSmall"
+                                    onKeyDown={[Function]}
+                                    onKeyUp={[Function]}
+                                  >
+                                    <span
+                                      className="MuiChip-label MuiChip-labelSmall"
+                                    >
+                                      July 13 2021
+                                    </span>
+                                  </div>
+                                </ForwardRef(Chip)>
+                              </WithStyles(ForwardRef(Chip))>
+                            </div>
+                          </div>
+                        </Time>
+                      </div>
+                    </div>
+                  </ForwardRef(CardContent)>
+                </WithStyles(ForwardRef(CardContent))>
+              </div>
+            </ForwardRef(Paper)>
+          </WithStyles(ForwardRef(Paper))>
+        </ForwardRef(Card)>
+      </WithStyles(ForwardRef(Card))>
+    </LogItem>
+  </Connect(LogItem)>
+</Provider>
+`;

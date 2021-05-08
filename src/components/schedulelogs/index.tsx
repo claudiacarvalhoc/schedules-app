@@ -1,33 +1,40 @@
 import { FC } from 'react';
-import { getScheduleLogsStatus, getSelectedScheduleId, getScheduleLogs } from '../../redux/app/selectors';
+import { getScheduleLogsStatus, getSelectedScheduleId, getScheduleLogs, getScheduleLogsText } from '../../redux/app/selectors';
 import { RootState } from '../../redux/reducers';
-import { ScheduleLogState, StatusState } from '../../redux/appState';
-// import { AppDispatch } from '../../redux/store';
+import { ScheduleLogState, ScheduleLogsTextState, StatusState } from '../../redux/appState';
 import { connect } from 'react-redux';
 import ReactLoading from 'react-loading';
-import ScheduleItem from '../logitem';
-// import styles from './ScheduleLogss.module.css';
-// import cn from 'classnames';
+import LogItem from '../logitem';
+import styles from './schedulelogs.module.css';
+import { AppDispatch } from '../../redux/store';
+import Button from '@material-ui/core/Button';
+import { getScheduleLogsAction } from '../../redux/app/actions';
 
-export interface ScheduleLogsOwnProps {
-    className?: string;
-}
+export interface ScheduleLogsOwnProps { }
 
 export interface ScheduleLogsStateProps {
   status: StatusState,
   logs: ScheduleLogState[],
+  texts: ScheduleLogsTextState,
 }
 
-export type ScheduleLogsProps = ScheduleLogsOwnProps & ScheduleLogsStateProps;
+export interface ScheduleLogsDispatchProps {
+  fetchScheduleLogs: () => void;
+}
+
+export type ScheduleLogsProps = ScheduleLogsOwnProps & ScheduleLogsStateProps & ScheduleLogsDispatchProps;
 
 const ScheduleLogs: FC<ScheduleLogsProps> = ({
-  className,
   status,
   logs,
+  texts,
+  fetchScheduleLogs,
  }) => {
   const isLoading = status === StatusState.Loading;
   const isSuccessfull = status === StatusState.Success;
   const isFailure = status === StatusState.Failure;
+
+  const hasLogItems = Array.isArray(logs) && logs.length > 0;
 
   return (
   <>
@@ -36,8 +43,31 @@ const ScheduleLogs: FC<ScheduleLogsProps> = ({
       <div>
         <ReactLoading type='spin' color='#000000' height={50} width={50} />
       </div>)}
-      {isSuccessfull && (logs.map(n => <ScheduleItem key={n.id} item={n} />))}
-      {isFailure && (<p>ScheduleLogs cannot be fetched :(</p>)}
+
+      {isFailure && (
+        <div className={styles.info}>
+          <p>{texts.errorMessageText}</p>
+          <Button
+            onClick={() => fetchScheduleLogs()}
+            variant="contained"
+            color="primary"
+            disableElevation>
+            {texts.buttonRetryText}
+          </Button>
+        </div>
+      )}
+
+      {isSuccessfull && !hasLogItems &&  (
+        <div className={styles.info}>
+          <p>{texts.emptyMessageText}</p>
+        </div>
+      )}
+
+      {isSuccessfull && hasLogItems && (
+        <div className={styles.schedulelogs}>
+          {logs.map(n => <LogItem key={n.id} item={n} />)}
+        </div>)}
+
     </div>
   </>);
  };
@@ -48,9 +78,17 @@ const mapStateToProps = (state: RootState): ScheduleLogsStateProps => {
     return {
         status: getScheduleLogsStatus(state),
         logs: logs.filter(n => n.scheduleId === id),
+        texts: getScheduleLogsText(state),
     };
 };
 
-export default connect<ScheduleLogsStateProps>(
-  mapStateToProps
+const mapDispatchToProps = (
+  dispatch: AppDispatch
+  ): ScheduleLogsDispatchProps => ({
+    fetchScheduleLogs: () => dispatch(getScheduleLogsAction()),
+});
+
+export default connect<ScheduleLogsStateProps, ScheduleLogsDispatchProps>(
+  mapStateToProps,
+  mapDispatchToProps
 )(ScheduleLogs);

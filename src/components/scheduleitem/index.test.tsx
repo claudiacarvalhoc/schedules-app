@@ -6,7 +6,7 @@ import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 import { Provider } from 'react-redux';
 import configureMockStore from 'redux-mock-store';
 import { appInitialState } from '../../redux/initialState';
-import { ScheduleState, ScheduleTextState } from '../../redux/appState';
+import { IntervalTypeState, ScheduleState, ScheduleTextState } from '../../redux/appState';
 // import { retireSchedule, unretireSchedule, updateSelectedSchedule } from '../../redux/app/actions';
 import thunk from 'redux-thunk';
 
@@ -17,7 +17,7 @@ const mockUpdateSelectedId = jest.fn();
 const mockRetire = jest.fn();
 const mockUnretire = jest.fn();
 
-const schedule = {
+const schedule: ScheduleState = {
     id: 40469125,
     avatar: {
         letter: 'J',
@@ -33,7 +33,7 @@ const schedule = {
     dayOfMonth: 31,
     startDate: new Date("2021-05-05"),
     endDate: new Date("2021-05-05"),
-    intervalType: 'Week',
+    intervalType: IntervalTypeState.Week,
     timePeriod: 30,
 };
 

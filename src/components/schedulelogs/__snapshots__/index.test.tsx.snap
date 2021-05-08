@@ -1,0 +1,350 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ScheduleLogs /> render correctly when component is loading 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Connect(ScheduleLogs)>
+    <ScheduleLogs
+      fetchScheduleLogs={[Function]}
+      logs={Array []}
+      status={0}
+      texts={
+        Object {
+          "buttonRetryText": "Retry",
+          "emptyMessageText": "No schedules logs available.",
+          "errorMessageText": "Something went wrong ...",
+        }
+      }
+    >
+      <div>
+        <div>
+          <Loading
+            color="#000000"
+            delay={0}
+            height={50}
+            type="spin"
+            width={50}
+          >
+            <div
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<svg xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 32 32\\">
+  <path opacity=\\".25\\" d=\\"M16 0 A16 16 0 0 0 16 32 A16 16 0 0 0 16 0 M16 4 A12 12 0 0 1 16 28 A12 12 0 0 1 16 4\\"/>
+  <path d=\\"M16 0 A16 16 0 0 1 32 16 L28 16 A12 12 0 0 0 16 4z\\">
+    <animateTransform attributeName=\\"transform\\" type=\\"rotate\\" from=\\"0 16 16\\" to=\\"360 16 16\\" dur=\\"0.8s\\" repeatCount=\\"indefinite\\" />
+  </path>
+</svg>
+",
+                }
+              }
+              style={
+                Object {
+                  "fill": "#000000",
+                  "height": 50,
+                  "width": 50,
+                }
+              }
+            />
+          </Loading>
+        </div>
+      </div>
+    </ScheduleLogs>
+  </Connect(ScheduleLogs)>
+</Provider>
+`;
+
+exports[`<ScheduleLogs /> render correctly when schedule logs couldn't be fetched and data was saved as failure 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Connect(ScheduleLogs)>
+    <ScheduleLogs
+      fetchScheduleLogs={[Function]}
+      logs={Array []}
+      status={2}
+      texts={
+        Object {
+          "buttonRetryText": "Retry",
+          "emptyMessageText": "No schedules logs available.",
+          "errorMessageText": "Something went wrong ...",
+        }
+      }
+    >
+      <div>
+        <div
+          className="info"
+        >
+          <p>
+            Something went wrong ...
+          </p>
+          <WithStyles(ForwardRef(Button))
+            color="primary"
+            disableElevation={true}
+            onClick={[Function]}
+            variant="contained"
+          >
+            <ForwardRef(Button)
+              classes={
+                Object {
+                  "colorInherit": "MuiButton-colorInherit",
+                  "contained": "MuiButton-contained",
+                  "containedPrimary": "MuiButton-containedPrimary",
+                  "containedSecondary": "MuiButton-containedSecondary",
+                  "containedSizeLarge": "MuiButton-containedSizeLarge",
+                  "containedSizeSmall": "MuiButton-containedSizeSmall",
+                  "disableElevation": "MuiButton-disableElevation",
+                  "disabled": "Mui-disabled",
+                  "endIcon": "MuiButton-endIcon",
+                  "focusVisible": "Mui-focusVisible",
+                  "fullWidth": "MuiButton-fullWidth",
+                  "iconSizeLarge": "MuiButton-iconSizeLarge",
+                  "iconSizeMedium": "MuiButton-iconSizeMedium",
+                  "iconSizeSmall": "MuiButton-iconSizeSmall",
+                  "label": "MuiButton-label",
+                  "outlined": "MuiButton-outlined",
+                  "outlinedPrimary": "MuiButton-outlinedPrimary",
+                  "outlinedSecondary": "MuiButton-outlinedSecondary",
+                  "outlinedSizeLarge": "MuiButton-outlinedSizeLarge",
+                  "outlinedSizeSmall": "MuiButton-outlinedSizeSmall",
+                  "root": "MuiButton-root",
+                  "sizeLarge": "MuiButton-sizeLarge",
+                  "sizeSmall": "MuiButton-sizeSmall",
+                  "startIcon": "MuiButton-startIcon",
+                  "text": "MuiButton-text",
+                  "textPrimary": "MuiButton-textPrimary",
+                  "textSecondary": "MuiButton-textSecondary",
+                  "textSizeLarge": "MuiButton-textSizeLarge",
+                  "textSizeSmall": "MuiButton-textSizeSmall",
+                }
+              }
+              color="primary"
+              disableElevation={true}
+              onClick={[Function]}
+              variant="contained"
+            >
+              <WithStyles(ForwardRef(ButtonBase))
+                className="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-disableElevation"
+                component="button"
+                disabled={false}
+                focusRipple={true}
+                focusVisibleClassName="Mui-focusVisible"
+                onClick={[Function]}
+                type="button"
+              >
+                <ForwardRef(ButtonBase)
+                  className="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-disableElevation"
+                  classes={
+                    Object {
+                      "disabled": "Mui-disabled",
+                      "focusVisible": "Mui-focusVisible",
+                      "root": "MuiButtonBase-root",
+                    }
+                  }
+                  component="button"
+                  disabled={false}
+                  focusRipple={true}
+                  focusVisibleClassName="Mui-focusVisible"
+                  onClick={[Function]}
+                  type="button"
+                >
+                  <button
+                    className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-disableElevation"
+                    disabled={false}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onDragLeave={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchMove={[Function]}
+                    onTouchStart={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    <span
+                      className="MuiButton-label"
+                    >
+                      Retry
+                    </span>
+                    <WithStyles(memo)
+                      center={false}
+                    >
+                      <ForwardRef(TouchRipple)
+                        center={false}
+                        classes={
+                          Object {
+                            "child": "MuiTouchRipple-child",
+                            "childLeaving": "MuiTouchRipple-childLeaving",
+                            "childPulsate": "MuiTouchRipple-childPulsate",
+                            "ripple": "MuiTouchRipple-ripple",
+                            "ripplePulsate": "MuiTouchRipple-ripplePulsate",
+                            "rippleVisible": "MuiTouchRipple-rippleVisible",
+                            "root": "MuiTouchRipple-root",
+                          }
+                        }
+                      >
+                        <span
+                          className="MuiTouchRipple-root"
+                        >
+                          <TransitionGroup
+                            childFactory={[Function]}
+                            component={null}
+                            exit={true}
+                          />
+                        </span>
+                      </ForwardRef(TouchRipple)>
+                    </WithStyles(memo)>
+                  </button>
+                </ForwardRef(ButtonBase)>
+              </WithStyles(ForwardRef(ButtonBase))>
+            </ForwardRef(Button)>
+          </WithStyles(ForwardRef(Button))>
+        </div>
+      </div>
+    </ScheduleLogs>
+  </Connect(ScheduleLogs)>
+</Provider>
+`;
+
+exports[`<ScheduleLogs /> render correctly when schedule logs has an array data and data was saved sucessfully 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Connect(ScheduleLogs)>
+    <ScheduleLogs
+      fetchScheduleLogs={[Function]}
+      logs={Array []}
+      status={1}
+      texts={
+        Object {
+          "buttonRetryText": "Retry",
+          "emptyMessageText": "No schedules logs available.",
+          "errorMessageText": "Something went wrong ...",
+        }
+      }
+    >
+      <div>
+        <div
+          className="info"
+        >
+          <p>
+            No schedules logs available.
+          </p>
+        </div>
+      </div>
+    </ScheduleLogs>
+  </Connect(ScheduleLogs)>
+</Provider>
+`;
+
+exports[`<ScheduleLogs /> render correctly when schedule logs is empty and data was saved sucessfully 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Connect(ScheduleLogs)>
+    <ScheduleLogs
+      fetchScheduleLogs={[Function]}
+      logs={Array []}
+      status={1}
+      texts={
+        Object {
+          "buttonRetryText": "Retry",
+          "emptyMessageText": "No schedules logs available.",
+          "errorMessageText": "Something went wrong ...",
+        }
+      }
+    >
+      <div>
+        <div
+          className="info"
+        >
+          <p>
+            No schedules logs available.
+          </p>
+        </div>
+      </div>
+    </ScheduleLogs>
+  </Connect(ScheduleLogs)>
+</Provider>
+`;
+
+exports[`<ScheduleLogs /> render correctly when schedule logs is undefined and data was saved sucessfully 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Connect(ScheduleLogs)>
+    <ScheduleLogs
+      fetchScheduleLogs={[Function]}
+      logs={Array []}
+      status={1}
+      texts={
+        Object {
+          "buttonRetryText": "Retry",
+          "emptyMessageText": "No schedules logs available.",
+          "errorMessageText": "Something went wrong ...",
+        }
+      }
+    >
+      <div>
+        <div
+          className="info"
+        >
+          <p>
+            No schedules logs available.
+          </p>
+        </div>
+      </div>
+    </ScheduleLogs>
+  </Connect(ScheduleLogs)>
+</Provider>
+`;

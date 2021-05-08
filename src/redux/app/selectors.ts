@@ -1,4 +1,4 @@
-import { HeaderTextStatus, ScheduleTextState, ScheduleState, ScheduleLogState, StatusState } from "../appState";
+import { HeaderTextStatus, ScheduleTextState, ScheduleState, ScheduleLogState, StatusState, ScheduleLogsTextState, LogTextState } from "../appState";
 import { RootState } from "../reducers";
 
 /**
@@ -24,3 +24,5 @@ export const getScheduleLogs = (state: RootState): ScheduleLogState[] => state.a
  */
 export const getHeaderTexts = (state: RootState): HeaderTextStatus => state.app.texts.header;
 export const getScheduleText = (state: RootState): ScheduleTextState => state.app.texts.schedules;
+export const getScheduleLogsText = (state: RootState): ScheduleLogsTextState => state.app.texts.scheduleLogs;
+export const getLogText = (state: RootState): LogTextState => state.app.texts.log;

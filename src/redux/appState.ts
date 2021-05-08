@@ -11,6 +11,8 @@ export interface AppState extends DefaultRootState {
     texts: {
         header: HeaderTextStatus;
         schedules: ScheduleTextState;
+        scheduleLogs: ScheduleLogsTextState;
+        log: LogTextState;
     }
 }
 
@@ -47,7 +49,7 @@ export interface ScheduleState {
     dayOfMonth: number;
     startDate: Date;
     endDate: Date;
-    schedules?: IntervalTypeState;
+    intervalType?: IntervalTypeState;
     timePeriod?: number;
 }
 
@@ -112,4 +114,21 @@ export interface ScheduleTextState {
     errorMessageText: string;
     buttonRetryText: string;
     emptyMessageText: string;
+}
+
+/**
+ * Texts used on Schedule Logs
+ */
+export interface ScheduleLogsTextState {
+    errorMessageText: string;
+    buttonRetryText: string;
+    emptyMessageText: string;
+}
+
+/**
+ * Texts used on Log Item
+ */
+export interface LogTextState {
+    labelStartTime: string;
+    labelEndTime: string;
 }

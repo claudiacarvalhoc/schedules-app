@@ -170,9 +170,16 @@ exports[`<Header /> render correctly 1`] = `
           </Connect(Schedules)>
           <Connect(ScheduleLogs)>
             <ScheduleLogs
-              dispatch={[Function]}
+              fetchScheduleLogs={[Function]}
               logs={Array []}
               status={0}
+              texts={
+                Object {
+                  "buttonRetryText": "Retry",
+                  "emptyMessageText": "No schedules logs available.",
+                  "errorMessageText": "Something went wrong ...",
+                }
+              }
             >
               <div>
                 <div>
