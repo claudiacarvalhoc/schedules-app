@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Schedule, ScheduleText } from '../../redux/appState';
+import { ScheduleState, ScheduleTextState } from '../../redux/appState';
 import { AppDispatch } from '../../redux/store';
 import { connect } from 'react-redux';
 import Card from '@material-ui/core/Card';
@@ -15,12 +15,12 @@ import cn from 'classnames';
 import { retireSchedule, unretireSchedule, updateSelectedSchedule } from '../../redux/app/actions';
 
 export interface ScheduleItemOwnProps {
-    schedule: Schedule;
+    schedule: ScheduleState;
     isSelected: boolean;
 }
 
 export interface ScheduleItemStateProps {
-  texts: ScheduleText;
+  texts: ScheduleTextState;
 }
 
 export interface ScheduleItemDispatchProps {

@@ -4,28 +4,28 @@ import { DefaultRootState } from "react-redux";
  * The App Status
  */
 export interface AppState extends DefaultRootState {
-    status: AppStatusSections;
+    status: AppStatusSectionsState;
     selectedScheduleId?: number;
-    schedules: Schedule[];
-    scheduleLogs: ScheduleLog[];
+    schedules: ScheduleState[];
+    scheduleLogs: ScheduleLogState[];
     texts: {
-        header: HeaderText;
-        schedules: ScheduleText;
+        header: HeaderTextStatus;
+        schedules: ScheduleTextState;
     }
 }
 
 /**
  * The status to fetch data per section
  */
-export interface AppStatusSections {
-    schedules: Status;
-    scheduleLogs: Status;
+export interface AppStatusSectionsState {
+    schedules: StatusState;
+    scheduleLogs: StatusState;
 }
 
 /**
  * The Boot Status is defined for options: Loading / Success / Failure.
  */
-export enum Status {
+export enum StatusState {
     Loading,
     Success,
     Failure
@@ -34,7 +34,7 @@ export enum Status {
 /**
  * The Schedule interface.
  */
-export interface Schedule {
+export interface ScheduleState {
     id: number;
     avatar: AvatarState;
     name: string;
@@ -47,7 +47,7 @@ export interface Schedule {
     dayOfMonth: number;
     startDate: Date;
     endDate: Date;
-    schedules?: IntervalType;
+    schedules?: IntervalTypeState;
     timePeriod?: number;
 }
 
@@ -62,7 +62,7 @@ export interface AvatarState {
 /**
  * The Schedule Interval Types
  */
-export enum IntervalType {
+export enum IntervalTypeState {
     Once,
     Year,
     Week,
@@ -74,11 +74,11 @@ export enum IntervalType {
 /**
  * The Schedule Logs interface.
  */
-export interface ScheduleLog {
+export interface ScheduleLogState {
     id: number;
     startTime: Date;
     endTime: Date;
-    status: LogStatus;
+    status: LogStatusState;
     serverName: string;
     scheduleId: number;
 }
@@ -86,7 +86,7 @@ export interface ScheduleLog {
 /**
  * The Schedule Logs Status
  */
-export enum LogStatus {
+export enum LogStatusState {
     Terminated,
     Pending,
     Completed,
@@ -98,7 +98,7 @@ export enum LogStatus {
  * Texts used on Header
  * Note: This allow us to add localisation feature easily
  */
-export interface HeaderText {
+export interface HeaderTextStatus {
     titleText: string;
 }
 
@@ -106,7 +106,7 @@ export interface HeaderText {
  * Texts used on Schedule
  * Note: This allow us to add localisation feature easily
  */
-export interface ScheduleText {
+export interface ScheduleTextState {
     buttonRetireText: string;
     buttonUnretireText: string;
     errorMessageText: string;

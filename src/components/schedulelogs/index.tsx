@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { getScheduleLogsStatus, getSelectedScheduleId, getScheduleLogs } from '../../redux/app/selectors';
 import { RootState } from '../../redux/reducers';
-import { ScheduleLog, Status } from '../../redux/appState';
+import { ScheduleLogState, StatusState } from '../../redux/appState';
 // import { AppDispatch } from '../../redux/store';
 import { connect } from 'react-redux';
 import ReactLoading from 'react-loading';
@@ -14,8 +14,8 @@ export interface ScheduleLogsOwnProps {
 }
 
 export interface ScheduleLogsStateProps {
-  status: Status,
-  logs: ScheduleLog[],
+  status: StatusState,
+  logs: ScheduleLogState[],
 }
 
 export type ScheduleLogsProps = ScheduleLogsOwnProps & ScheduleLogsStateProps;
@@ -25,9 +25,9 @@ const ScheduleLogs: FC<ScheduleLogsProps> = ({
   status,
   logs,
  }) => {
-  const isLoading = status === Status.Loading;
-  const isSuccessfull = status === Status.Success;
-  const isFailure = status === Status.Failure;
+  const isLoading = status === StatusState.Loading;
+  const isSuccessfull = status === StatusState.Success;
+  const isFailure = status === StatusState.Failure;
 
   return (
   <>

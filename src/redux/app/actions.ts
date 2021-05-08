@@ -112,7 +112,6 @@ export const updateSelectedSchedule = (scheduleId: number): UpdateSelectedSchedu
  */
 export const getSchedulesAction = (): ((dispatch: AppDispatch) => Promise<void>) => {
     return dispatch => {
-        const path = `${config.host}${config.path.schedules}`;
         return axios.get(`${config.host}${config.path.schedules}`)
             .then(({ data }) => {
                 if (Array.isArray(data)) {

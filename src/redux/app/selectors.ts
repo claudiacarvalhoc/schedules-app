@@ -1,27 +1,26 @@
-import { HeaderText, ScheduleText, Schedule, ScheduleLog, Status } from "../appState";
+import { HeaderTextStatus, ScheduleTextState, ScheduleState, ScheduleLogState, StatusState } from "../appState";
 import { RootState } from "../reducers";
 
 /**
  * Get Fetch Status
  * @param state
  */
-export const getSchedulesStatus = (state: RootState): Status => state.app.status.schedules;
-export const getScheduleLogsStatus = (state: RootState): Status => state.app.status.scheduleLogs;
+export const getSchedulesStatus = (state: RootState): StatusState => state.app.status.schedules;
+export const getScheduleLogsStatus = (state: RootState): StatusState => state.app.status.scheduleLogs;
 
 /**
  * Get Schedules , Selected Shedule Id
  */
-export const getSchedules = (state: RootState): Schedule[] => state.app.schedules;
+export const getSchedules = (state: RootState): ScheduleState[] => state.app.schedules;
 export const getSelectedScheduleId = (state: RootState): number => state.app.selectedScheduleId;
 
 /**
  * Get ScheduleLogs , Selected Shedule Id
  */
-export const getScheduleLogs = (state: RootState): ScheduleLog[] => state.app.scheduleLogs;
+export const getScheduleLogs = (state: RootState): ScheduleLogState[] => state.app.scheduleLogs;
 
 /**
- * Texts
+ * Get Texts
  */
-
-export const getHeaderTexts = (state: RootState): HeaderText => state.app.texts.header;
-export const getScheduleText = (state: RootState): ScheduleText => state.app.texts.schedules;
+export const getHeaderTexts = (state: RootState): HeaderTextStatus => state.app.texts.header;
+export const getScheduleText = (state: RootState): ScheduleTextState => state.app.texts.schedules;

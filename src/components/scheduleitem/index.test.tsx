@@ -1,13 +1,13 @@
 import React from 'react';
 import ScheduleItem from './index';
-import Enzyme, { mount, shallow } from 'enzyme';
+import Enzyme, { mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 import { Provider } from 'react-redux';
 import configureMockStore from 'redux-mock-store';
 import { appInitialState } from '../../redux/initialState';
-import { Schedule, ScheduleText } from '../../redux/appState';
-import { retireSchedule, unretireSchedule, updateSelectedSchedule } from '../../redux/app/actions';
+import { ScheduleState, ScheduleTextState } from '../../redux/appState';
+// import { retireSchedule, unretireSchedule, updateSelectedSchedule } from '../../redux/app/actions';
 import thunk from 'redux-thunk';
 
 Enzyme.configure({ adapter: new Adapter() });
@@ -38,8 +38,8 @@ const schedule = {
 };
 
 const getMountWrapper = (
-    schedule: Schedule,
-    scheduleTexts: Partial<ScheduleText> = {}
+    schedule: ScheduleState,
+    scheduleTexts: Partial<ScheduleTextState> = {}
 ) => {
     const props = {
         schedule,

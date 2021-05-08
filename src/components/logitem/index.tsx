@@ -1,10 +1,10 @@
 import { FC } from 'react';
-import { ScheduleLog } from '../../redux/appState';
+import { ScheduleLogState } from '../../redux/appState';
 // import cn from 'classnames';
 // import styles from './logitem.module.css';
 
 export interface ScheduleItemProps {
-    item: ScheduleLog;
+    item: ScheduleLogState;
 }
 
 const ScheduleItem: FC<ScheduleItemProps> = ({ item }) => (

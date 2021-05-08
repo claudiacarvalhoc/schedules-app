@@ -1,5 +1,5 @@
 import { AppActions } from './actions';
-import { AppState, Status } from '../appState';
+import { AppState, StatusState } from '../appState';
 import { appInitialState } from '../initialState';
 import { FETCH_SCHEDULE_SUCCESS, FETCH_SCHEDULE_FAILURE, FETCH_SCHEDULE_LOGS_SUCCESS, FETCH_SCHEDULE_LOGS_FAILURE, REQUEST_RETIRE_SCHEDULE, REQUEST_UNRETIRE_SCHEDULE, UPDATE_SELECTED_SCHEDULE } from '../types';
 import _ from 'lodash';
@@ -21,7 +21,7 @@ export const appReducer = (
                 selectedScheduleId: hasItems ? action.schedules[0].id : undefined,
                 status: {
                     ...state.status,
-                    schedules: Status.Success,
+                    schedules: StatusState.Success,
                 },
             };
         }
@@ -32,7 +32,7 @@ export const appReducer = (
                 selectedScheduleId: undefined,
                 status: {
                     ...state.status,
-                    schedules: Status.Failure,
+                    schedules: StatusState.Failure,
                 },
             };
         }
@@ -45,7 +45,7 @@ export const appReducer = (
                 scheduleLogs: action.scheduleLogs,
                 status: {
                     ...state.status,
-                    scheduleLogs: Status.Success,
+                    scheduleLogs: StatusState.Success,
                 },
             };
         }
@@ -55,7 +55,7 @@ export const appReducer = (
                 scheduleLogs: [],
                 status: {
                     ...state.status,
-                    scheduleLogs: Status.Failure,
+                    scheduleLogs: StatusState.Failure,
                 },
             };
         }

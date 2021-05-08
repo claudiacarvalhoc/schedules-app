@@ -5,12 +5,12 @@ import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 import { Provider } from 'react-redux';
 import configureMockStore from 'redux-mock-store';
 import { appInitialState } from '../../redux/initialState';
-import { Schedule, Status } from '../../redux/appState';
+import { ScheduleState, StatusState } from '../../redux/appState';
 import thunk from 'redux-thunk';
 
 Enzyme.configure({ adapter: new Adapter() });
 
-const getMountWrapper = (schedulesStatus: Status, schedulesData: Schedule[] = undefined) => {
+const getMountWrapper = (schedulesStatus: StatusState, schedulesData: ScheduleState[] = undefined) => {
     const store = configureMockStore([thunk])({
       app: {
         ...appInitialState,
@@ -30,23 +30,23 @@ const getMountWrapper = (schedulesStatus: Status, schedulesData: Schedule[] = un
 
 describe('<Schedules />', () => {
     it('render correctly when component is loading', () => {
-        const component = getMountWrapper(Status.Loading);
+        const component = getMountWrapper(StatusState.Loading);
         expect(toJson(component)).toMatchSnapshot();
     });
     it('render correctly when schedules has an array data and data was saved sucessfully', () => {
-        const component = getMountWrapper(Status.Success);
+        const component = getMountWrapper(StatusState.Success);
         expect(toJson(component)).toMatchSnapshot();
     });
     it('render correctly when schedules is empty and data was saved sucessfully', () => {
-        const component = getMountWrapper(Status.Success, []);
+        const component = getMountWrapper(StatusState.Success, []);
         expect(toJson(component)).toMatchSnapshot();
     });
     it('render correctly when schedules is undefined and data was saved sucessfully', () => {
-        const component = getMountWrapper(Status.Success, []);
+        const component = getMountWrapper(StatusState.Success, []);
         expect(toJson(component)).toMatchSnapshot();
     });
     it('render correctly when schedules couldn\'t be fetched and data was saved as failure', () => {
-        const component = getMountWrapper(Status.Failure);
+        const component = getMountWrapper(StatusState.Failure);
         expect(toJson(component)).toMatchSnapshot();
     });
 });

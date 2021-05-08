@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { getSchedulesStatus, getSchedules, getScheduleText, getSelectedScheduleId } from '../../redux/app/selectors';
 import { RootState } from '../../redux/reducers';
-import { Schedule, ScheduleText, Status } from '../../redux/appState';
+import { ScheduleState, ScheduleTextState, StatusState } from '../../redux/appState';
 import { AppDispatch } from '../../redux/store';
 import { connect } from 'react-redux';
 import ReactLoading from 'react-loading';
@@ -13,9 +13,9 @@ import { getSchedulesAction } from '../../redux/app/actions';
 export interface SchedulesOwnProps { }
 
 export interface SchedulesStateProps {
-  status: Status,
-  schedules: Schedule[],
-  texts: ScheduleText;
+  status: StatusState,
+  schedules: ScheduleState[],
+  texts: ScheduleTextState;
   selectedScheduleId: number;
 }
 
@@ -32,9 +32,9 @@ const Schedules: FC<SchedulesProps> = ({
   selectedScheduleId,
   fetchSchedules,
  }) => {
-  const isLoading = status === Status.Loading;
-  const isSuccessfull = status === Status.Success;
-  const isFailure = status === Status.Failure;
+  const isLoading = status === StatusState.Loading;
+  const isSuccessfull = status === StatusState.Success;
+  const isFailure = status === StatusState.Failure;
 
   const hasItems = Array.isArray(schedules) && schedules.length > 0;
 

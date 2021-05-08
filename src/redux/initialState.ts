@@ -1,12 +1,12 @@
-import { AppState, AvatarState, Status } from "./appState";
+import { AppState, AvatarState, StatusState } from "./appState";
 
 /**
  * This is the initial state of redux.
  */
 export const appInitialState: AppState = {
     status: {
-        schedules: Status.Loading,
-        scheduleLogs: Status.Loading,
+        schedules: StatusState.Loading,
+        scheduleLogs: StatusState.Loading,
     },
     selectedScheduleId: undefined,
     schedules: [],
