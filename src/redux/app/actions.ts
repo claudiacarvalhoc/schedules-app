@@ -2,7 +2,8 @@ import axios from 'axios';
 import { Action } from 'redux';
 import { config } from '../../config';
 import { AppDispatch } from '../store';
-import { FETCH_SCHEDULE_SUCCESS, FETCH_SCHEDULE_FAILURE, FETCH_SCHEDULE_LOGS_SUCCESS, FETCH_SCHEDULE_LOGS_FAILURE  } from "../types";
+import { avatarInitialState } from '../../redux/initialState';
+import { FETCH_SCHEDULE_SUCCESS, FETCH_SCHEDULE_FAILURE, FETCH_SCHEDULE_LOGS_SUCCESS, FETCH_SCHEDULE_LOGS_FAILURE, REQUEST_RETIRE_SCHEDULE, REQUEST_UNRETIRE_SCHEDULE, UPDATE_SELECTED_SCHEDULE } from "../types";
 
 /**
  ** This type is used when the action fetchScheduleSuccessfullyAction is dispatched.
@@ -60,6 +61,51 @@ export const fetchScheduleLogsFailure = (): FetchScheduleLogsFailureAction => ({
 });
 
 /**
+ ** This type is used when a schedule should be retired.
+ */
+export interface RetireSchedule extends Action<string> {
+    scheduleId: number
+}
+
+/**
+ * This action is dispatched when the user wants to retire the schedule.
+ */
+export const retireSchedule = (scheduleId: number): RetireSchedule => ({
+    type: REQUEST_RETIRE_SCHEDULE,
+    scheduleId,
+});
+
+/**
+ ** This type is used when a schedule should be unretired.
+ */
+export interface UnretireSchedule extends Action<string> {
+    scheduleId: number
+}
+
+/**
+ * This action is dispatched when the user wants to unretire the schedule.
+ */
+export const unretireSchedule = (scheduleId: number): UnretireSchedule => ({
+    type: REQUEST_UNRETIRE_SCHEDULE,
+    scheduleId,
+});
+
+/**
+ ** This type is used to set the select schedule to the selected one
+ */
+export interface UpdateSelectedSchedule extends Action<string> {
+    scheduleId: number
+}
+
+/**
+ * This action is dispatched when the user select another schedule card
+ */
+export const updateSelectedSchedule = (scheduleId: number): UpdateSelectedSchedule => ({
+    type: UPDATE_SELECTED_SCHEDULE,
+    scheduleId,
+});
+
+/**
  * This function fetch the schedules list.
  * If fetch is sucessfull, is dispatched a successfull action to fill the schedules on store
  * Otherwise, a fectch error must be set on store.
@@ -67,9 +113,14 @@ export const fetchScheduleLogsFailure = (): FetchScheduleLogsFailureAction => ({
 export const getSchedulesAction = (): ((dispatch: AppDispatch) => Promise<void>) => {
     return dispatch => {
         const path = `${config.host}${config.path.schedules}`;
-        console.log('request -', path);
         return axios.get(`${config.host}${config.path.schedules}`)
             .then(({ data }) => {
+                if (Array.isArray(data)) {
+                    data.forEach((element) => {
+                        const index = Math.floor(Math.random() * avatarInitialState.length);
+                        element.avatar = avatarInitialState[index];
+                    });
+                }
                 dispatch(fetchScheduleSuccessfullyAction(data));
             })
             .catch((error) => {
@@ -95,4 +146,4 @@ export const getScheduleLogsAction = (): ((dispatch: AppDispatch) => Promise<voi
     };
 };
 
-export type AppActions = FetchScheduleSuccessfullyAction & FetchScheduleLogsFailureAction & FetchScheduleLogsSuccessfullyAction & FetchScheduleLogsFailureAction;
+export type AppActions = FetchScheduleSuccessfullyAction & FetchScheduleLogsFailureAction & FetchScheduleLogsSuccessfullyAction & FetchScheduleLogsFailureAction & RetireSchedule & UnretireSchedule & UpdateSelectedSchedule;

@@ -4,6 +4,7 @@ import { RootState } from '../../redux/reducers';
 import { connect } from 'react-redux';
 import DehazeIcon from '@material-ui/icons/Dehaze';
 import styles from './header.module.css';
+import Typography from '@material-ui/core/Typography';
 
 export interface HeaderOwnProps { }
 
@@ -18,7 +19,9 @@ const Header: FC<HeaderProps> = ({
  }) => {
   return (
   <div className={styles.container}>
-    <h2 className={styles.title}>{title}</h2>
+    <Typography className={styles.title} variant="h5" gutterBottom>
+      {title}
+    </Typography>
     <DehazeIcon/>
   </div>);
  };

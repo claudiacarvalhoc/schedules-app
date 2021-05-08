@@ -1,7 +1,9 @@
 .container {
-    height: 500px;
+    height: 645px;
     width: 300px;
     overflow: scroll;
+    padding-right: 20px;
+    margin-right: 20px;
 }
 
 .loading {
@@ -19,4 +21,11 @@
     align-items: center;
     width: inherit;
     height: inherit;
+}
+
+@media (max-width: 480px) {
+    .container
+    {
+        /* TODO */
+    }
 }

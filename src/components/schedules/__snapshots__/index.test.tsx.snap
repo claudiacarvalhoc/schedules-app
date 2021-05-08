@@ -69,95 +69,7 @@ exports[`<Schedules /> render correctly when component is loading 1`] = `
 </Provider>
 `;
 
-exports[`<Schedules /> render correctly when data was fetched sucessfully 1`] = `
-<Provider
-  store={
-    Object {
-      "clearActions": [Function],
-      "dispatch": [Function],
-      "getActions": [Function],
-      "getState": [Function],
-      "replaceReducer": [Function],
-      "subscribe": [Function],
-    }
-  }
->
-  <Connect(Schedules)>
-    <Schedules
-      fetchSchedules={[Function]}
-      schedules={Array []}
-      status={1}
-      texts={
-        Object {
-          "buttonRetireText": "Retire",
-          "buttonRetryText": "Retry",
-          "buttonUnretireText": "Unretire",
-          "emptyMessageText": "No schedules available.",
-          "errorMessageText": "Something went wrong ...",
-        }
-      }
-    >
-      <div
-        className="container"
-      >
-        <div
-          className="info"
-        >
-          <p>
-            No schedules available.
-          </p>
-        </div>
-      </div>
-    </Schedules>
-  </Connect(Schedules)>
-</Provider>
-`;
-
-exports[`<Schedules /> render correctly when data was fetched sucessfully but not have data 1`] = `
-<Provider
-  store={
-    Object {
-      "clearActions": [Function],
-      "dispatch": [Function],
-      "getActions": [Function],
-      "getState": [Function],
-      "replaceReducer": [Function],
-      "subscribe": [Function],
-    }
-  }
->
-  <Connect(Schedules)>
-    <Schedules
-      fetchSchedules={[Function]}
-      schedules={Array []}
-      status={1}
-      texts={
-        Object {
-          "buttonRetireText": "Retire",
-          "buttonRetryText": "Retry",
-          "buttonUnretireText": "Unretire",
-          "emptyMessageText": "No schedules available.",
-          "errorMessageText": "Something went wrong ...",
-        }
-      }
-    >
-      <div
-        className="container"
-      >
-        <div
-          className="info"
-        >
-          <p>
-            No schedules available.
-          </p>
-        </div>
-      </div>
-    </Schedules>
-  </Connect(Schedules)>
-</Provider>
-`;
-
-exports[`<Schedules /> render correctly when data was not fetched 1`] = `
+exports[`<Schedules /> render correctly when schedules couldn't be fetched and data was saved as failure 1`] = `
 <Provider
   store={
     Object {
@@ -320,6 +232,138 @@ exports[`<Schedules /> render correctly when data was not fetched 1`] = `
               </WithStyles(ForwardRef(ButtonBase))>
             </ForwardRef(Button)>
           </WithStyles(ForwardRef(Button))>
+        </div>
+      </div>
+    </Schedules>
+  </Connect(Schedules)>
+</Provider>
+`;
+
+exports[`<Schedules /> render correctly when schedules has an array data and data was saved sucessfully 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Connect(Schedules)>
+    <Schedules
+      fetchSchedules={[Function]}
+      schedules={Array []}
+      status={1}
+      texts={
+        Object {
+          "buttonRetireText": "Retire",
+          "buttonRetryText": "Retry",
+          "buttonUnretireText": "Unretire",
+          "emptyMessageText": "No schedules available.",
+          "errorMessageText": "Something went wrong ...",
+        }
+      }
+    >
+      <div
+        className="container"
+      >
+        <div
+          className="info"
+        >
+          <p>
+            No schedules available.
+          </p>
+        </div>
+      </div>
+    </Schedules>
+  </Connect(Schedules)>
+</Provider>
+`;
+
+exports[`<Schedules /> render correctly when schedules is empty and data was saved sucessfully 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Connect(Schedules)>
+    <Schedules
+      fetchSchedules={[Function]}
+      schedules={Array []}
+      status={1}
+      texts={
+        Object {
+          "buttonRetireText": "Retire",
+          "buttonRetryText": "Retry",
+          "buttonUnretireText": "Unretire",
+          "emptyMessageText": "No schedules available.",
+          "errorMessageText": "Something went wrong ...",
+        }
+      }
+    >
+      <div
+        className="container"
+      >
+        <div
+          className="info"
+        >
+          <p>
+            No schedules available.
+          </p>
+        </div>
+      </div>
+    </Schedules>
+  </Connect(Schedules)>
+</Provider>
+`;
+
+exports[`<Schedules /> render correctly when schedules is undefined and data was saved sucessfully 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Connect(Schedules)>
+    <Schedules
+      fetchSchedules={[Function]}
+      schedules={Array []}
+      status={1}
+      texts={
+        Object {
+          "buttonRetireText": "Retire",
+          "buttonRetryText": "Retry",
+          "buttonUnretireText": "Unretire",
+          "emptyMessageText": "No schedules available.",
+          "errorMessageText": "Something went wrong ...",
+        }
+      }
+    >
+      <div
+        className="container"
+      >
+        <div
+          className="info"
+        >
+          <p>
+            No schedules available.
+          </p>
         </div>
       </div>
     </Schedules>

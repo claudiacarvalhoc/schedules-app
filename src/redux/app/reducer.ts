@@ -1,9 +1,8 @@
 import { AppActions } from './actions';
-// import {  } from "../types";
 import { AppState, Status } from '../appState';
 import { appInitialState } from '../initialState';
-import { FETCH_SCHEDULE_SUCCESS, FETCH_SCHEDULE_FAILURE, FETCH_SCHEDULE_LOGS_SUCCESS, FETCH_SCHEDULE_LOGS_FAILURE } from '../types';
-// import _ from 'lodash';
+import { FETCH_SCHEDULE_SUCCESS, FETCH_SCHEDULE_FAILURE, FETCH_SCHEDULE_LOGS_SUCCESS, FETCH_SCHEDULE_LOGS_FAILURE, REQUEST_RETIRE_SCHEDULE, REQUEST_UNRETIRE_SCHEDULE, UPDATE_SELECTED_SCHEDULE } from '../types';
+import _ from 'lodash';
 
 
 export const appReducer = (
@@ -58,6 +57,33 @@ export const appReducer = (
                     ...state.status,
                     scheduleLogs: Status.Failure,
                 },
+            };
+        }
+        /**
+         * User Actions
+         */
+        case REQUEST_RETIRE_SCHEDULE: {
+            const schedules = _.cloneDeep(state.schedules);
+            const index = schedules.findIndex(n => n.id === action.scheduleId);
+            schedules[index].isRetired = true;
+            return {
+                ...state,
+                schedules,
+            };
+        }
+        case REQUEST_UNRETIRE_SCHEDULE: {
+            const schedules = _.cloneDeep(state.schedules);
+            const index = schedules.findIndex(n => n.id === action.scheduleId);
+            schedules[index].isRetired = false;
+            return {
+                ...state,
+                schedules,
+            };
+        }
+        case UPDATE_SELECTED_SCHEDULE: {
+            return {
+                ...state,
+                selectedScheduleId: action.scheduleId,
             };
         }
         /**

@@ -9,7 +9,7 @@ const getShallowWrapper = ({ letter, color }) => {
     );
   };
 
-describe('<Header />', () => {
+describe('<Profile />', () => {
     it('render correctly with color orange', () => {
         const props = {
             letter: 'T',

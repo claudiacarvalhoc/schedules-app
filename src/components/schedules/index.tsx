@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { getSchedulesStatus, getSchedules, getScheduleText } from '../../redux/app/selectors';
+import { getSchedulesStatus, getSchedules, getScheduleText, getSelectedScheduleId } from '../../redux/app/selectors';
 import { RootState } from '../../redux/reducers';
 import { Schedule, ScheduleText, Status } from '../../redux/appState';
 import { AppDispatch } from '../../redux/store';
@@ -16,6 +16,7 @@ export interface SchedulesStateProps {
   status: Status,
   schedules: Schedule[],
   texts: ScheduleText;
+  selectedScheduleId: number;
 }
 
 export interface SchedulesDispatchProps {
@@ -28,13 +29,14 @@ const Schedules: FC<SchedulesProps> = ({
   status,
   texts,
   schedules,
+  selectedScheduleId,
   fetchSchedules,
  }) => {
   const isLoading = status === Status.Loading;
   const isSuccessfull = status === Status.Success;
   const isFailure = status === Status.Failure;
 
-  const isEmpty = Array.isArray(schedules) && schedules.length === 0;
+  const hasItems = Array.isArray(schedules) && schedules.length > 0;
 
   return (
   <div className={styles.container}>
@@ -57,13 +59,16 @@ const Schedules: FC<SchedulesProps> = ({
         </div>
       )}
 
-      {isSuccessfull && isEmpty &&  (
+      {isSuccessfull && !hasItems &&  (
         <div className={styles.info}>
           <p>{texts.emptyMessageText}</p>
         </div>
       )}
 
-      {isSuccessfull && !isEmpty && (schedules.map(n => <ScheduleItem schedule={n} />))}
+      {isSuccessfull && hasItems && (schedules.map(n => {
+        const isSelected = n.id === selectedScheduleId;
+        return <ScheduleItem key={n.id} schedule={n} isSelected={isSelected} />;
+      }))}
     </div>);
  };
 
@@ -71,6 +76,7 @@ const mapStateToProps = (state: RootState): SchedulesStateProps => ({
   status: getSchedulesStatus(state),
   schedules: getSchedules(state),
   texts: getScheduleText(state),
+  selectedScheduleId: getSelectedScheduleId(state),
 });
 
 const mapDispatchToProps = (

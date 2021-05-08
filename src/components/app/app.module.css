@@ -5,3 +5,10 @@
 .content {
     display: flex;
 }
+
+@media (max-width: 480px) {
+    .container
+    {
+        /* TODO */
+    }
+}

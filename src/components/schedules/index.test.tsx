@@ -1,4 +1,3 @@
-import React from 'react';
 import Schedules from './index';
 import Enzyme, { mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
@@ -34,16 +33,20 @@ describe('<Schedules />', () => {
         const component = getMountWrapper(Status.Loading);
         expect(toJson(component)).toMatchSnapshot();
     });
-    it('render correctly when data was fetched sucessfully', () => {
+    it('render correctly when schedules has an array data and data was saved sucessfully', () => {
         const component = getMountWrapper(Status.Success);
         expect(toJson(component)).toMatchSnapshot();
     });
-    it('render correctly when data was not fetched', () => {
-        const component = getMountWrapper(Status.Failure);
+    it('render correctly when schedules is empty and data was saved sucessfully', () => {
+        const component = getMountWrapper(Status.Success, []);
         expect(toJson(component)).toMatchSnapshot();
     });
-    it('render correctly when data was fetched sucessfully but not have data', () => {
+    it('render correctly when schedules is undefined and data was saved sucessfully', () => {
         const component = getMountWrapper(Status.Success, []);
+        expect(toJson(component)).toMatchSnapshot();
+    });
+    it('render correctly when schedules couldn\'t be fetched and data was saved as failure', () => {
+        const component = getMountWrapper(Status.Failure);
         expect(toJson(component)).toMatchSnapshot();
     });
 });

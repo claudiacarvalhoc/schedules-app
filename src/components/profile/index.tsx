@@ -5,7 +5,7 @@ import cn from 'classnames';
 
 export interface ProfileProps {
   letter: string;
-  color: 'orange' | 'purple';
+  color: string;
 }
 
 const Profile: FC<ProfileProps> = ({ letter, color }) => {

@@ -36,6 +36,7 @@ export enum Status {
  */
 export interface Schedule {
     id: number;
+    avatar: AvatarState;
     name: string;
     description: string;
     isRetired: boolean;
@@ -48,6 +49,14 @@ export interface Schedule {
     endDate: Date;
     schedules?: IntervalType;
     timePeriod?: number;
+}
+
+/**
+ * The Avatar Identification
+ */
+export interface AvatarState {
+    letter: string;
+    color: string;
 }
 
 /**

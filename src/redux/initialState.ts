@@ -1,4 +1,4 @@
-import { AppState, Status } from "./appState";
+import { AppState, AvatarState, Status } from "./appState";
 
 /**
  * This is the initial state of redux.
@@ -24,3 +24,22 @@ export const appInitialState: AppState = {
         }
     }
 };
+
+export const avatarInitialState: AvatarState[] = [
+    {
+      letter: 'N',
+      color: 'orange',
+    },
+    {
+      letter: 'A',
+      color: 'purple',
+    },
+    {
+      letter: 'T',
+      color: 'orange',
+    },
+    {
+      letter: 'J',
+      color: 'purple',
+    }
+];

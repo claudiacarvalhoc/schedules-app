@@ -1,8 +1,8 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { getScheduleLogsStatus, getSelectedScheduleId, getScheduleLogs } from '../../redux/app/selectors';
 import { RootState } from '../../redux/reducers';
 import { ScheduleLog, Status } from '../../redux/appState';
-import { AppDispatch } from '../../redux/store';
+// import { AppDispatch } from '../../redux/store';
 import { connect } from 'react-redux';
 import ReactLoading from 'react-loading';
 import ScheduleItem from '../logitem';
@@ -36,7 +36,7 @@ const ScheduleLogs: FC<ScheduleLogsProps> = ({
       <div>
         <ReactLoading type='spin' color='#000000' height={50} width={50} />
       </div>)}
-      {isSuccessfull && (logs.map(n => <ScheduleItem item={n} />))}
+      {isSuccessfull && (logs.map(n => <ScheduleItem key={n.id} item={n} />))}
       {isFailure && (<p>ScheduleLogs cannot be fetched :(</p>)}
     </div>
   </>);
