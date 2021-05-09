@@ -123,6 +123,7 @@ export interface ScheduleLogsTextState {
     errorMessageText: string;
     buttonRetryText: string;
     emptyMessageText: string;
+    noSelectedScheduleText: string;
 }
 
 /**

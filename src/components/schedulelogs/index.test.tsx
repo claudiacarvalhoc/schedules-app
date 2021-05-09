@@ -41,10 +41,6 @@ const getMountWrapper = (
   };
 
 describe('<ScheduleLogs />', () => {
-    it('render correctly when component is loading', () => {
-        const component = getMountWrapper(StatusState.Loading, []);
-        expect(toJson(component)).toMatchSnapshot();
-    });
     it('render correctly when schedule logs has an array data and data was saved sucessfully', () => {
         const component = getMountWrapper(StatusState.Success, [scheduleLogItem]);
         expect(toJson(component)).toMatchSnapshot();

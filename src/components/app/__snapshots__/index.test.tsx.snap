@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Header /> render correctly 1`] = `
+exports[`<Header /> render correctly when data is being fetched 1`] = `
 <Provider
   store={
     Object {
@@ -16,6 +16,7 @@ exports[`<Header /> render correctly 1`] = `
   <Connect(App)>
     <App
       bootApp={[Function]}
+      isLoading={true}
     >
       <div
         className="container"
@@ -28,193 +29,580 @@ exports[`<Header /> render correctly 1`] = `
             <div
               className="container"
             >
-              <WithStyles(ForwardRef(Typography))
-                className="title"
-                gutterBottom={true}
-                variant="h5"
+              <WithStyles(ForwardRef(AppBar))
+                position="static"
               >
-                <ForwardRef(Typography)
-                  className="title"
+                <ForwardRef(AppBar)
                   classes={
                     Object {
-                      "alignCenter": "MuiTypography-alignCenter",
-                      "alignJustify": "MuiTypography-alignJustify",
-                      "alignLeft": "MuiTypography-alignLeft",
-                      "alignRight": "MuiTypography-alignRight",
-                      "body1": "MuiTypography-body1",
-                      "body2": "MuiTypography-body2",
-                      "button": "MuiTypography-button",
-                      "caption": "MuiTypography-caption",
-                      "colorError": "MuiTypography-colorError",
-                      "colorInherit": "MuiTypography-colorInherit",
-                      "colorPrimary": "MuiTypography-colorPrimary",
-                      "colorSecondary": "MuiTypography-colorSecondary",
-                      "colorTextPrimary": "MuiTypography-colorTextPrimary",
-                      "colorTextSecondary": "MuiTypography-colorTextSecondary",
-                      "displayBlock": "MuiTypography-displayBlock",
-                      "displayInline": "MuiTypography-displayInline",
-                      "gutterBottom": "MuiTypography-gutterBottom",
-                      "h1": "MuiTypography-h1",
-                      "h2": "MuiTypography-h2",
-                      "h3": "MuiTypography-h3",
-                      "h4": "MuiTypography-h4",
-                      "h5": "MuiTypography-h5",
-                      "h6": "MuiTypography-h6",
-                      "noWrap": "MuiTypography-noWrap",
-                      "overline": "MuiTypography-overline",
-                      "paragraph": "MuiTypography-paragraph",
-                      "root": "MuiTypography-root",
-                      "srOnly": "MuiTypography-srOnly",
-                      "subtitle1": "MuiTypography-subtitle1",
-                      "subtitle2": "MuiTypography-subtitle2",
+                      "colorDefault": "MuiAppBar-colorDefault",
+                      "colorInherit": "MuiAppBar-colorInherit",
+                      "colorPrimary": "MuiAppBar-colorPrimary",
+                      "colorSecondary": "MuiAppBar-colorSecondary",
+                      "colorTransparent": "MuiAppBar-colorTransparent",
+                      "positionAbsolute": "MuiAppBar-positionAbsolute",
+                      "positionFixed": "MuiAppBar-positionFixed",
+                      "positionRelative": "MuiAppBar-positionRelative",
+                      "positionStatic": "MuiAppBar-positionStatic",
+                      "positionSticky": "MuiAppBar-positionSticky",
+                      "root": "MuiAppBar-root",
                     }
                   }
-                  gutterBottom={true}
-                  variant="h5"
+                  position="static"
                 >
-                  <h5
-                    className="MuiTypography-root title MuiTypography-h5 MuiTypography-gutterBottom"
+                  <WithStyles(ForwardRef(Paper))
+                    className="MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary"
+                    component="header"
+                    elevation={4}
+                    square={true}
                   >
-                    Schedules
-                  </h5>
-                </ForwardRef(Typography)>
-              </WithStyles(ForwardRef(Typography))>
-              <ForwardRef(DehazeIcon)>
-                <WithStyles(ForwardRef(SvgIcon))>
-                  <ForwardRef(SvgIcon)
-                    classes={
-                      Object {
-                        "colorAction": "MuiSvgIcon-colorAction",
-                        "colorDisabled": "MuiSvgIcon-colorDisabled",
-                        "colorError": "MuiSvgIcon-colorError",
-                        "colorPrimary": "MuiSvgIcon-colorPrimary",
-                        "colorSecondary": "MuiSvgIcon-colorSecondary",
-                        "fontSizeInherit": "MuiSvgIcon-fontSizeInherit",
-                        "fontSizeLarge": "MuiSvgIcon-fontSizeLarge",
-                        "fontSizeSmall": "MuiSvgIcon-fontSizeSmall",
-                        "root": "MuiSvgIcon-root",
+                    <ForwardRef(Paper)
+                      className="MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary"
+                      classes={
+                        Object {
+                          "elevation0": "MuiPaper-elevation0",
+                          "elevation1": "MuiPaper-elevation1",
+                          "elevation10": "MuiPaper-elevation10",
+                          "elevation11": "MuiPaper-elevation11",
+                          "elevation12": "MuiPaper-elevation12",
+                          "elevation13": "MuiPaper-elevation13",
+                          "elevation14": "MuiPaper-elevation14",
+                          "elevation15": "MuiPaper-elevation15",
+                          "elevation16": "MuiPaper-elevation16",
+                          "elevation17": "MuiPaper-elevation17",
+                          "elevation18": "MuiPaper-elevation18",
+                          "elevation19": "MuiPaper-elevation19",
+                          "elevation2": "MuiPaper-elevation2",
+                          "elevation20": "MuiPaper-elevation20",
+                          "elevation21": "MuiPaper-elevation21",
+                          "elevation22": "MuiPaper-elevation22",
+                          "elevation23": "MuiPaper-elevation23",
+                          "elevation24": "MuiPaper-elevation24",
+                          "elevation3": "MuiPaper-elevation3",
+                          "elevation4": "MuiPaper-elevation4",
+                          "elevation5": "MuiPaper-elevation5",
+                          "elevation6": "MuiPaper-elevation6",
+                          "elevation7": "MuiPaper-elevation7",
+                          "elevation8": "MuiPaper-elevation8",
+                          "elevation9": "MuiPaper-elevation9",
+                          "outlined": "MuiPaper-outlined",
+                          "root": "MuiPaper-root",
+                          "rounded": "MuiPaper-rounded",
+                        }
                       }
-                    }
-                  >
-                    <svg
-                      aria-hidden={true}
-                      className="MuiSvgIcon-root"
-                      focusable="false"
-                      viewBox="0 0 24 24"
+                      component="header"
+                      elevation={4}
+                      square={true}
                     >
-                      <path
-                        d="M2 15.5v2h20v-2H2zm0-5v2h20v-2H2zm0-5v2h20v-2H2z"
-                      />
-                    </svg>
-                  </ForwardRef(SvgIcon)>
-                </WithStyles(ForwardRef(SvgIcon))>
-              </ForwardRef(DehazeIcon)>
+                      <header
+                        className="MuiPaper-root MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary MuiPaper-elevation4"
+                      >
+                        <WithStyles(ForwardRef(Toolbar))
+                          className="bar"
+                        >
+                          <ForwardRef(Toolbar)
+                            className="bar"
+                            classes={
+                              Object {
+                                "dense": "MuiToolbar-dense",
+                                "gutters": "MuiToolbar-gutters",
+                                "regular": "MuiToolbar-regular",
+                                "root": "MuiToolbar-root",
+                              }
+                            }
+                          >
+                            <div
+                              className="MuiToolbar-root MuiToolbar-regular bar MuiToolbar-gutters"
+                            >
+                              <WithStyles(ForwardRef(Typography))
+                                variant="h6"
+                              >
+                                <ForwardRef(Typography)
+                                  classes={
+                                    Object {
+                                      "alignCenter": "MuiTypography-alignCenter",
+                                      "alignJustify": "MuiTypography-alignJustify",
+                                      "alignLeft": "MuiTypography-alignLeft",
+                                      "alignRight": "MuiTypography-alignRight",
+                                      "body1": "MuiTypography-body1",
+                                      "body2": "MuiTypography-body2",
+                                      "button": "MuiTypography-button",
+                                      "caption": "MuiTypography-caption",
+                                      "colorError": "MuiTypography-colorError",
+                                      "colorInherit": "MuiTypography-colorInherit",
+                                      "colorPrimary": "MuiTypography-colorPrimary",
+                                      "colorSecondary": "MuiTypography-colorSecondary",
+                                      "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                                      "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                                      "displayBlock": "MuiTypography-displayBlock",
+                                      "displayInline": "MuiTypography-displayInline",
+                                      "gutterBottom": "MuiTypography-gutterBottom",
+                                      "h1": "MuiTypography-h1",
+                                      "h2": "MuiTypography-h2",
+                                      "h3": "MuiTypography-h3",
+                                      "h4": "MuiTypography-h4",
+                                      "h5": "MuiTypography-h5",
+                                      "h6": "MuiTypography-h6",
+                                      "noWrap": "MuiTypography-noWrap",
+                                      "overline": "MuiTypography-overline",
+                                      "paragraph": "MuiTypography-paragraph",
+                                      "root": "MuiTypography-root",
+                                      "srOnly": "MuiTypography-srOnly",
+                                      "subtitle1": "MuiTypography-subtitle1",
+                                      "subtitle2": "MuiTypography-subtitle2",
+                                    }
+                                  }
+                                  variant="h6"
+                                >
+                                  <h6
+                                    className="MuiTypography-root MuiTypography-h6"
+                                  >
+                                    Schedules
+                                  </h6>
+                                </ForwardRef(Typography)>
+                              </WithStyles(ForwardRef(Typography))>
+                              <div
+                                className="search"
+                              >
+                                <WithStyles(ForwardRef(InputBase))
+                                  classes={
+                                    Object {
+                                      "input": "inputInput",
+                                      "root": "inputRoot",
+                                    }
+                                  }
+                                  inputProps={
+                                    Object {
+                                      "aria-label": "search",
+                                    }
+                                  }
+                                  placeholder="Search…"
+                                >
+                                  <ForwardRef(InputBase)
+                                    classes={
+                                      Object {
+                                        "adornedEnd": "MuiInputBase-adornedEnd",
+                                        "adornedStart": "MuiInputBase-adornedStart",
+                                        "colorSecondary": "MuiInputBase-colorSecondary",
+                                        "disabled": "Mui-disabled",
+                                        "error": "Mui-error",
+                                        "focused": "Mui-focused",
+                                        "formControl": "MuiInputBase-formControl",
+                                        "fullWidth": "MuiInputBase-fullWidth",
+                                        "input": "MuiInputBase-input inputInput",
+                                        "inputAdornedEnd": "MuiInputBase-inputAdornedEnd",
+                                        "inputAdornedStart": "MuiInputBase-inputAdornedStart",
+                                        "inputHiddenLabel": "MuiInputBase-inputHiddenLabel",
+                                        "inputMarginDense": "MuiInputBase-inputMarginDense",
+                                        "inputMultiline": "MuiInputBase-inputMultiline",
+                                        "inputTypeSearch": "MuiInputBase-inputTypeSearch",
+                                        "marginDense": "MuiInputBase-marginDense",
+                                        "multiline": "MuiInputBase-multiline",
+                                        "root": "MuiInputBase-root inputRoot",
+                                      }
+                                    }
+                                    inputProps={
+                                      Object {
+                                        "aria-label": "search",
+                                      }
+                                    }
+                                    placeholder="Search…"
+                                  >
+                                    <div
+                                      className="MuiInputBase-root inputRoot"
+                                      onClick={[Function]}
+                                    >
+                                      <input
+                                        aria-label="search"
+                                        className="MuiInputBase-input inputInput"
+                                        onAnimationStart={[Function]}
+                                        onBlur={[Function]}
+                                        onChange={[Function]}
+                                        onFocus={[Function]}
+                                        placeholder="Search…"
+                                        type="text"
+                                      />
+                                    </div>
+                                  </ForwardRef(InputBase)>
+                                </WithStyles(ForwardRef(InputBase))>
+                              </div>
+                              <ForwardRef(MenuIcon)>
+                                <WithStyles(ForwardRef(SvgIcon))>
+                                  <ForwardRef(SvgIcon)
+                                    classes={
+                                      Object {
+                                        "colorAction": "MuiSvgIcon-colorAction",
+                                        "colorDisabled": "MuiSvgIcon-colorDisabled",
+                                        "colorError": "MuiSvgIcon-colorError",
+                                        "colorPrimary": "MuiSvgIcon-colorPrimary",
+                                        "colorSecondary": "MuiSvgIcon-colorSecondary",
+                                        "fontSizeInherit": "MuiSvgIcon-fontSizeInherit",
+                                        "fontSizeLarge": "MuiSvgIcon-fontSizeLarge",
+                                        "fontSizeSmall": "MuiSvgIcon-fontSizeSmall",
+                                        "root": "MuiSvgIcon-root",
+                                      }
+                                    }
+                                  >
+                                    <svg
+                                      aria-hidden={true}
+                                      className="MuiSvgIcon-root"
+                                      focusable="false"
+                                      viewBox="0 0 24 24"
+                                    >
+                                      <path
+                                        d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+                                      />
+                                    </svg>
+                                  </ForwardRef(SvgIcon)>
+                                </WithStyles(ForwardRef(SvgIcon))>
+                              </ForwardRef(MenuIcon)>
+                            </div>
+                          </ForwardRef(Toolbar)>
+                        </WithStyles(ForwardRef(Toolbar))>
+                      </header>
+                    </ForwardRef(Paper)>
+                  </WithStyles(ForwardRef(Paper))>
+                </ForwardRef(AppBar)>
+              </WithStyles(ForwardRef(AppBar))>
             </div>
           </Header>
         </Connect(Header)>
         <div
-          className="content"
+          className="loading"
         >
-          <Connect(Schedules)>
-            <Schedules
-              fetchSchedules={[Function]}
-              schedules={Array []}
-              status={0}
-              texts={
+          <Loading
+            color="#000000"
+            delay={0}
+            height={50}
+            type="spin"
+            width={50}
+          >
+            <div
+              dangerouslySetInnerHTML={
                 Object {
-                  "buttonRetireText": "Retire",
-                  "buttonRetryText": "Retry",
-                  "buttonUnretireText": "Unretire",
-                  "emptyMessageText": "No schedules available.",
-                  "errorMessageText": "Something went wrong ...",
+                  "__html": "<svg xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 32 32\\">
+  <path opacity=\\".25\\" d=\\"M16 0 A16 16 0 0 0 16 32 A16 16 0 0 0 16 0 M16 4 A12 12 0 0 1 16 28 A12 12 0 0 1 16 4\\"/>
+  <path d=\\"M16 0 A16 16 0 0 1 32 16 L28 16 A12 12 0 0 0 16 4z\\">
+    <animateTransform attributeName=\\"transform\\" type=\\"rotate\\" from=\\"0 16 16\\" to=\\"360 16 16\\" dur=\\"0.8s\\" repeatCount=\\"indefinite\\" />
+  </path>
+</svg>
+",
                 }
               }
+              style={
+                Object {
+                  "fill": "#000000",
+                  "height": 50,
+                  "width": 50,
+                }
+              }
+            />
+          </Loading>
+        </div>
+      </div>
+    </App>
+  </Connect(App)>
+</Provider>
+`;
+
+exports[`<Header /> render correctly when data is fetched 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Connect(App)>
+    <App
+      bootApp={[Function]}
+      isLoading={true}
+    >
+      <div
+        className="container"
+      >
+        <Connect(Header)>
+          <Header
+            dispatch={[Function]}
+            title="Schedules"
+          >
+            <div
+              className="container"
             >
-              <div
-                className="container"
+              <WithStyles(ForwardRef(AppBar))
+                position="static"
               >
-                <div
-                  className="loading"
+                <ForwardRef(AppBar)
+                  classes={
+                    Object {
+                      "colorDefault": "MuiAppBar-colorDefault",
+                      "colorInherit": "MuiAppBar-colorInherit",
+                      "colorPrimary": "MuiAppBar-colorPrimary",
+                      "colorSecondary": "MuiAppBar-colorSecondary",
+                      "colorTransparent": "MuiAppBar-colorTransparent",
+                      "positionAbsolute": "MuiAppBar-positionAbsolute",
+                      "positionFixed": "MuiAppBar-positionFixed",
+                      "positionRelative": "MuiAppBar-positionRelative",
+                      "positionStatic": "MuiAppBar-positionStatic",
+                      "positionSticky": "MuiAppBar-positionSticky",
+                      "root": "MuiAppBar-root",
+                    }
+                  }
+                  position="static"
                 >
-                  <Loading
-                    color="#000000"
-                    delay={0}
-                    height={50}
-                    type="spin"
-                    width={50}
+                  <WithStyles(ForwardRef(Paper))
+                    className="MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary"
+                    component="header"
+                    elevation={4}
+                    square={true}
                   >
-                    <div
-                      dangerouslySetInnerHTML={
+                    <ForwardRef(Paper)
+                      className="MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary"
+                      classes={
                         Object {
-                          "__html": "<svg xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 32 32\\">
+                          "elevation0": "MuiPaper-elevation0",
+                          "elevation1": "MuiPaper-elevation1",
+                          "elevation10": "MuiPaper-elevation10",
+                          "elevation11": "MuiPaper-elevation11",
+                          "elevation12": "MuiPaper-elevation12",
+                          "elevation13": "MuiPaper-elevation13",
+                          "elevation14": "MuiPaper-elevation14",
+                          "elevation15": "MuiPaper-elevation15",
+                          "elevation16": "MuiPaper-elevation16",
+                          "elevation17": "MuiPaper-elevation17",
+                          "elevation18": "MuiPaper-elevation18",
+                          "elevation19": "MuiPaper-elevation19",
+                          "elevation2": "MuiPaper-elevation2",
+                          "elevation20": "MuiPaper-elevation20",
+                          "elevation21": "MuiPaper-elevation21",
+                          "elevation22": "MuiPaper-elevation22",
+                          "elevation23": "MuiPaper-elevation23",
+                          "elevation24": "MuiPaper-elevation24",
+                          "elevation3": "MuiPaper-elevation3",
+                          "elevation4": "MuiPaper-elevation4",
+                          "elevation5": "MuiPaper-elevation5",
+                          "elevation6": "MuiPaper-elevation6",
+                          "elevation7": "MuiPaper-elevation7",
+                          "elevation8": "MuiPaper-elevation8",
+                          "elevation9": "MuiPaper-elevation9",
+                          "outlined": "MuiPaper-outlined",
+                          "root": "MuiPaper-root",
+                          "rounded": "MuiPaper-rounded",
+                        }
+                      }
+                      component="header"
+                      elevation={4}
+                      square={true}
+                    >
+                      <header
+                        className="MuiPaper-root MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary MuiPaper-elevation4"
+                      >
+                        <WithStyles(ForwardRef(Toolbar))
+                          className="bar"
+                        >
+                          <ForwardRef(Toolbar)
+                            className="bar"
+                            classes={
+                              Object {
+                                "dense": "MuiToolbar-dense",
+                                "gutters": "MuiToolbar-gutters",
+                                "regular": "MuiToolbar-regular",
+                                "root": "MuiToolbar-root",
+                              }
+                            }
+                          >
+                            <div
+                              className="MuiToolbar-root MuiToolbar-regular bar MuiToolbar-gutters"
+                            >
+                              <WithStyles(ForwardRef(Typography))
+                                variant="h6"
+                              >
+                                <ForwardRef(Typography)
+                                  classes={
+                                    Object {
+                                      "alignCenter": "MuiTypography-alignCenter",
+                                      "alignJustify": "MuiTypography-alignJustify",
+                                      "alignLeft": "MuiTypography-alignLeft",
+                                      "alignRight": "MuiTypography-alignRight",
+                                      "body1": "MuiTypography-body1",
+                                      "body2": "MuiTypography-body2",
+                                      "button": "MuiTypography-button",
+                                      "caption": "MuiTypography-caption",
+                                      "colorError": "MuiTypography-colorError",
+                                      "colorInherit": "MuiTypography-colorInherit",
+                                      "colorPrimary": "MuiTypography-colorPrimary",
+                                      "colorSecondary": "MuiTypography-colorSecondary",
+                                      "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                                      "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                                      "displayBlock": "MuiTypography-displayBlock",
+                                      "displayInline": "MuiTypography-displayInline",
+                                      "gutterBottom": "MuiTypography-gutterBottom",
+                                      "h1": "MuiTypography-h1",
+                                      "h2": "MuiTypography-h2",
+                                      "h3": "MuiTypography-h3",
+                                      "h4": "MuiTypography-h4",
+                                      "h5": "MuiTypography-h5",
+                                      "h6": "MuiTypography-h6",
+                                      "noWrap": "MuiTypography-noWrap",
+                                      "overline": "MuiTypography-overline",
+                                      "paragraph": "MuiTypography-paragraph",
+                                      "root": "MuiTypography-root",
+                                      "srOnly": "MuiTypography-srOnly",
+                                      "subtitle1": "MuiTypography-subtitle1",
+                                      "subtitle2": "MuiTypography-subtitle2",
+                                    }
+                                  }
+                                  variant="h6"
+                                >
+                                  <h6
+                                    className="MuiTypography-root MuiTypography-h6"
+                                  >
+                                    Schedules
+                                  </h6>
+                                </ForwardRef(Typography)>
+                              </WithStyles(ForwardRef(Typography))>
+                              <div
+                                className="search"
+                              >
+                                <WithStyles(ForwardRef(InputBase))
+                                  classes={
+                                    Object {
+                                      "input": "inputInput",
+                                      "root": "inputRoot",
+                                    }
+                                  }
+                                  inputProps={
+                                    Object {
+                                      "aria-label": "search",
+                                    }
+                                  }
+                                  placeholder="Search…"
+                                >
+                                  <ForwardRef(InputBase)
+                                    classes={
+                                      Object {
+                                        "adornedEnd": "MuiInputBase-adornedEnd",
+                                        "adornedStart": "MuiInputBase-adornedStart",
+                                        "colorSecondary": "MuiInputBase-colorSecondary",
+                                        "disabled": "Mui-disabled",
+                                        "error": "Mui-error",
+                                        "focused": "Mui-focused",
+                                        "formControl": "MuiInputBase-formControl",
+                                        "fullWidth": "MuiInputBase-fullWidth",
+                                        "input": "MuiInputBase-input inputInput",
+                                        "inputAdornedEnd": "MuiInputBase-inputAdornedEnd",
+                                        "inputAdornedStart": "MuiInputBase-inputAdornedStart",
+                                        "inputHiddenLabel": "MuiInputBase-inputHiddenLabel",
+                                        "inputMarginDense": "MuiInputBase-inputMarginDense",
+                                        "inputMultiline": "MuiInputBase-inputMultiline",
+                                        "inputTypeSearch": "MuiInputBase-inputTypeSearch",
+                                        "marginDense": "MuiInputBase-marginDense",
+                                        "multiline": "MuiInputBase-multiline",
+                                        "root": "MuiInputBase-root inputRoot",
+                                      }
+                                    }
+                                    inputProps={
+                                      Object {
+                                        "aria-label": "search",
+                                      }
+                                    }
+                                    placeholder="Search…"
+                                  >
+                                    <div
+                                      className="MuiInputBase-root inputRoot"
+                                      onClick={[Function]}
+                                    >
+                                      <input
+                                        aria-label="search"
+                                        className="MuiInputBase-input inputInput"
+                                        onAnimationStart={[Function]}
+                                        onBlur={[Function]}
+                                        onChange={[Function]}
+                                        onFocus={[Function]}
+                                        placeholder="Search…"
+                                        type="text"
+                                      />
+                                    </div>
+                                  </ForwardRef(InputBase)>
+                                </WithStyles(ForwardRef(InputBase))>
+                              </div>
+                              <ForwardRef(MenuIcon)>
+                                <WithStyles(ForwardRef(SvgIcon))>
+                                  <ForwardRef(SvgIcon)
+                                    classes={
+                                      Object {
+                                        "colorAction": "MuiSvgIcon-colorAction",
+                                        "colorDisabled": "MuiSvgIcon-colorDisabled",
+                                        "colorError": "MuiSvgIcon-colorError",
+                                        "colorPrimary": "MuiSvgIcon-colorPrimary",
+                                        "colorSecondary": "MuiSvgIcon-colorSecondary",
+                                        "fontSizeInherit": "MuiSvgIcon-fontSizeInherit",
+                                        "fontSizeLarge": "MuiSvgIcon-fontSizeLarge",
+                                        "fontSizeSmall": "MuiSvgIcon-fontSizeSmall",
+                                        "root": "MuiSvgIcon-root",
+                                      }
+                                    }
+                                  >
+                                    <svg
+                                      aria-hidden={true}
+                                      className="MuiSvgIcon-root"
+                                      focusable="false"
+                                      viewBox="0 0 24 24"
+                                    >
+                                      <path
+                                        d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+                                      />
+                                    </svg>
+                                  </ForwardRef(SvgIcon)>
+                                </WithStyles(ForwardRef(SvgIcon))>
+                              </ForwardRef(MenuIcon)>
+                            </div>
+                          </ForwardRef(Toolbar)>
+                        </WithStyles(ForwardRef(Toolbar))>
+                      </header>
+                    </ForwardRef(Paper)>
+                  </WithStyles(ForwardRef(Paper))>
+                </ForwardRef(AppBar)>
+              </WithStyles(ForwardRef(AppBar))>
+            </div>
+          </Header>
+        </Connect(Header)>
+        <div
+          className="loading"
+        >
+          <Loading
+            color="#000000"
+            delay={0}
+            height={50}
+            type="spin"
+            width={50}
+          >
+            <div
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<svg xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 32 32\\">
   <path opacity=\\".25\\" d=\\"M16 0 A16 16 0 0 0 16 32 A16 16 0 0 0 16 0 M16 4 A12 12 0 0 1 16 28 A12 12 0 0 1 16 4\\"/>
   <path d=\\"M16 0 A16 16 0 0 1 32 16 L28 16 A12 12 0 0 0 16 4z\\">
     <animateTransform attributeName=\\"transform\\" type=\\"rotate\\" from=\\"0 16 16\\" to=\\"360 16 16\\" dur=\\"0.8s\\" repeatCount=\\"indefinite\\" />
   </path>
 </svg>
 ",
-                        }
-                      }
-                      style={
-                        Object {
-                          "fill": "#000000",
-                          "height": 50,
-                          "width": 50,
-                        }
-                      }
-                    />
-                  </Loading>
-                </div>
-              </div>
-            </Schedules>
-          </Connect(Schedules)>
-          <Connect(ScheduleLogs)>
-            <ScheduleLogs
-              fetchScheduleLogs={[Function]}
-              logs={Array []}
-              status={0}
-              texts={
-                Object {
-                  "buttonRetryText": "Retry",
-                  "emptyMessageText": "No schedules logs available.",
-                  "errorMessageText": "Something went wrong ...",
                 }
               }
-            >
-              <div>
-                <div>
-                  <Loading
-                    color="#000000"
-                    delay={0}
-                    height={50}
-                    type="spin"
-                    width={50}
-                  >
-                    <div
-                      dangerouslySetInnerHTML={
-                        Object {
-                          "__html": "<svg xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 32 32\\">
-  <path opacity=\\".25\\" d=\\"M16 0 A16 16 0 0 0 16 32 A16 16 0 0 0 16 0 M16 4 A12 12 0 0 1 16 28 A12 12 0 0 1 16 4\\"/>
-  <path d=\\"M16 0 A16 16 0 0 1 32 16 L28 16 A12 12 0 0 0 16 4z\\">
-    <animateTransform attributeName=\\"transform\\" type=\\"rotate\\" from=\\"0 16 16\\" to=\\"360 16 16\\" dur=\\"0.8s\\" repeatCount=\\"indefinite\\" />
-  </path>
-</svg>
-",
-                        }
-                      }
-                      style={
-                        Object {
-                          "fill": "#000000",
-                          "height": 50,
-                          "width": 50,
-                        }
-                      }
-                    />
-                  </Loading>
-                </div>
-              </div>
-            </ScheduleLogs>
-          </Connect(ScheduleLogs)>
+              style={
+                Object {
+                  "fill": "#000000",
+                  "height": 50,
+                  "width": 50,
+                }
+              }
+            />
+          </Loading>
         </div>
       </div>
     </App>

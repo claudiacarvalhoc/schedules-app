@@ -6,9 +6,15 @@
     display: flex;
 }
 
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+}
+
 @media (max-width: 480px) {
-    .container
-    {
-        /* TODO */
+    .content {
+        display: block;
     }
 }

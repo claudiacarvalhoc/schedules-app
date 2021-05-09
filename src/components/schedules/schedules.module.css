@@ -6,14 +6,6 @@
     margin-right: 20px;
 }
 
-.loading {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: inherit;
-    height: inherit;
-}
-
 .info {
     display: flex;
     justify-content: center;
@@ -23,9 +15,16 @@
     height: inherit;
 }
 
+.items {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
 @media (max-width: 480px) {
     .container
     {
-        /* TODO */
+        height: 100%;
+        width: 100%;
+        overflow: initial;
     }
 }

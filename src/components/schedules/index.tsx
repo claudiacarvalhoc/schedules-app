@@ -4,7 +4,6 @@ import { RootState } from '../../redux/reducers';
 import { ScheduleState, ScheduleTextState, StatusState } from '../../redux/appState';
 import { AppDispatch } from '../../redux/store';
 import { connect } from 'react-redux';
-import ReactLoading from 'react-loading';
 import ScheduleItem from '../scheduleitem';
 import styles from './schedules.module.css';
 import Button from '@material-ui/core/Button';
@@ -32,7 +31,6 @@ const Schedules: FC<SchedulesProps> = ({
   selectedScheduleId,
   fetchSchedules,
  }) => {
-  const isLoading = status === StatusState.Loading;
   const isSuccessfull = status === StatusState.Success;
   const isFailure = status === StatusState.Failure;
 
@@ -40,11 +38,6 @@ const Schedules: FC<SchedulesProps> = ({
 
   return (
   <div className={styles.container}>
-      {isLoading && (
-        <div className={styles.loading}>
-          <ReactLoading type='spin' color='#000000' height={50} width={50} />
-        </div>)
-      }
 
       {isFailure && (
         <div className={styles.info}>
@@ -65,10 +58,12 @@ const Schedules: FC<SchedulesProps> = ({
         </div>
       )}
 
+      <div className={styles.items}>
       {isSuccessfull && hasItems && (schedules.map(n => {
         const isSelected = n.id === selectedScheduleId;
         return <ScheduleItem key={n.id} schedule={n} isSelected={isSelected} />;
       }))}
+      </div>
     </div>);
  };
 

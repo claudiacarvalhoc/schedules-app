@@ -71,6 +71,7 @@ exports[`<ScheduleItem /> render correctly 1`] = `
           "buttonUnretireText": "Unretire",
           "emptyMessageText": "No schedules available.",
           "errorMessageText": "Something went wrong ...",
+          "noSelectedScheduleText": "Please select a schedule.",
         }
       }
       unretire={[Function]}

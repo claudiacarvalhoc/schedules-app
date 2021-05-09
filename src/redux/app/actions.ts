@@ -3,7 +3,7 @@ import { Action } from 'redux';
 import { config } from '../../config';
 import { AppDispatch } from '../store';
 import { avatarInitialState } from '../../redux/initialState';
-import { FETCH_SCHEDULE_SUCCESS, FETCH_SCHEDULE_FAILURE, FETCH_SCHEDULE_LOGS_SUCCESS, FETCH_SCHEDULE_LOGS_FAILURE, REQUEST_RETIRE_SCHEDULE, REQUEST_UNRETIRE_SCHEDULE, UPDATE_SELECTED_SCHEDULE } from "../types";
+import { FETCH_SCHEDULE_SUCCESS, FETCH_SCHEDULE_FAILURE, FETCH_SCHEDULE_LOGS_SUCCESS, FETCH_SCHEDULE_LOGS_FAILURE, REQUEST_RETIRE_SCHEDULE, REQUEST_UNRETIRE_SCHEDULE, UPDATE_SELECTED_SCHEDULE, RESET_SELECTED_SCHEDULE } from "../types";
 
 /**
  ** This type is used when the action fetchScheduleSuccessfullyAction is dispatched.
@@ -103,6 +103,19 @@ export interface UpdateSelectedSchedule extends Action<string> {
 export const updateSelectedSchedule = (scheduleId: number): UpdateSelectedSchedule => ({
     type: UPDATE_SELECTED_SCHEDULE,
     scheduleId,
+});
+
+/**
+ ** This type is used to reset the select schedule
+ */
+export interface ResetSelectedSchedule extends Action<string> {
+}
+
+/**
+ * This action is dispatched to reset the selected schedule
+ */
+export const resetSelectedSchedule = (): ResetSelectedSchedule => ({
+    type: RESET_SELECTED_SCHEDULE,
 });
 
 /**

@@ -43,6 +43,7 @@ const texts: ScheduleTextState = {
     errorMessageText: 'Something went wrong ...',
     buttonRetryText: 'Retry',
     emptyMessageText: 'No schedules available.',
+    noSelectedScheduleText: 'Please select a schedule.',
 };
 
 const getMountWrapper = (

@@ -4,11 +4,16 @@ import styles from './app.module.css';
 import { RootState } from '../../redux/reducers';
 import { AppDispatch } from '../../redux/store';
 import { getSchedulesAction, getScheduleLogsAction } from '../../redux/app/actions';
+import { getSchedulesStatus, getScheduleLogsStatus } from '../../redux/app/selectors';
 import Schedules from '../schedules';
 import ScheduleLogs from '../schedulelogs';
 import Header from '../header';
+import ReactLoading from 'react-loading';
+import { StatusState } from '../../redux/appState';
 
-export interface AppStateProps { }
+export interface AppStateProps {
+  isLoading: boolean;
+}
 
 export interface AppDispatchProps {
   bootApp: () => void;
@@ -16,7 +21,10 @@ export interface AppDispatchProps {
 
 export type AppProps = AppStateProps & AppDispatchProps;
 
-const App: FC<AppProps> = ({ bootApp }) => {
+const App: FC<AppProps> = ({
+  isLoading,
+  bootApp,
+}) => {
   /**
    * Fetch schedules data when the component did mount
    **/
@@ -26,16 +34,22 @@ const App: FC<AppProps> = ({ bootApp }) => {
 
   return (
     <div className={styles.container}>
+
       <Header/>
-      <div className={styles.content}>
+      {isLoading && (
+        <div className={styles.loading}>
+          <ReactLoading type='spin' color='#000000' height={50} width={50} />
+        </div>)}
+      {!isLoading && (<div className={styles.content}>
         <Schedules />
         <ScheduleLogs />
-      </div>
+      </div>)}
     </div>
   );
 };
 
 const mapStateToProps = (state: RootState): AppStateProps => ({
+  isLoading: getSchedulesStatus(state) === StatusState.Loading || getScheduleLogsStatus(state) === StatusState.Loading,
 });
 
 const mapDispatchToProps = (

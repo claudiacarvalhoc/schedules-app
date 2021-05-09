@@ -1,68 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<ScheduleLogs /> render correctly when component is loading 1`] = `
-<Provider
-  store={
-    Object {
-      "clearActions": [Function],
-      "dispatch": [Function],
-      "getActions": [Function],
-      "getState": [Function],
-      "replaceReducer": [Function],
-      "subscribe": [Function],
-    }
-  }
->
-  <Connect(ScheduleLogs)>
-    <ScheduleLogs
-      fetchScheduleLogs={[Function]}
-      logs={Array []}
-      status={0}
-      texts={
-        Object {
-          "buttonRetryText": "Retry",
-          "emptyMessageText": "No schedules logs available.",
-          "errorMessageText": "Something went wrong ...",
-        }
-      }
-    >
-      <div>
-        <div>
-          <Loading
-            color="#000000"
-            delay={0}
-            height={50}
-            type="spin"
-            width={50}
-          >
-            <div
-              dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<svg xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 32 32\\">
-  <path opacity=\\".25\\" d=\\"M16 0 A16 16 0 0 0 16 32 A16 16 0 0 0 16 0 M16 4 A12 12 0 0 1 16 28 A12 12 0 0 1 16 4\\"/>
-  <path d=\\"M16 0 A16 16 0 0 1 32 16 L28 16 A12 12 0 0 0 16 4z\\">
-    <animateTransform attributeName=\\"transform\\" type=\\"rotate\\" from=\\"0 16 16\\" to=\\"360 16 16\\" dur=\\"0.8s\\" repeatCount=\\"indefinite\\" />
-  </path>
-</svg>
-",
-                }
-              }
-              style={
-                Object {
-                  "fill": "#000000",
-                  "height": 50,
-                  "width": 50,
-                }
-              }
-            />
-          </Loading>
-        </div>
-      </div>
-    </ScheduleLogs>
-  </Connect(ScheduleLogs)>
-</Provider>
-`;
-
 exports[`<ScheduleLogs /> render correctly when schedule logs couldn't be fetched and data was saved as failure 1`] = `
 <Provider
   store={
@@ -79,19 +16,23 @@ exports[`<ScheduleLogs /> render correctly when schedule logs couldn't be fetche
   <Connect(ScheduleLogs)>
     <ScheduleLogs
       fetchScheduleLogs={[Function]}
-      logs={Array []}
+      isSelected={false}
+      logs={false}
+      resetSelectedSchedule={[Function]}
+      scheduleName={false}
       status={2}
       texts={
         Object {
           "buttonRetryText": "Retry",
           "emptyMessageText": "No schedules logs available.",
           "errorMessageText": "Something went wrong ...",
+          "noSelectedScheduleText": "Please select a schedule.",
         }
       }
     >
       <div>
         <div
-          className="info"
+          className="failure"
         >
           <p>
             Something went wrong ...
@@ -223,6 +164,10 @@ exports[`<ScheduleLogs /> render correctly when schedule logs couldn't be fetche
             </ForwardRef(Button)>
           </WithStyles(ForwardRef(Button))>
         </div>
+        <div
+          className="overlay"
+          onClick={[Function]}
+        />
       </div>
     </ScheduleLogs>
   </Connect(ScheduleLogs)>
@@ -245,24 +190,26 @@ exports[`<ScheduleLogs /> render correctly when schedule logs has an array data 
   <Connect(ScheduleLogs)>
     <ScheduleLogs
       fetchScheduleLogs={[Function]}
-      logs={Array []}
+      isSelected={false}
+      logs={false}
+      resetSelectedSchedule={[Function]}
+      scheduleName={false}
       status={1}
       texts={
         Object {
           "buttonRetryText": "Retry",
           "emptyMessageText": "No schedules logs available.",
           "errorMessageText": "Something went wrong ...",
+          "noSelectedScheduleText": "Please select a schedule.",
         }
       }
     >
-      <div>
-        <div
-          className="info"
-        >
-          <p>
-            No schedules logs available.
-          </p>
-        </div>
+      <div
+        className="info"
+      >
+        <p>
+          Please select a schedule.
+        </p>
       </div>
     </ScheduleLogs>
   </Connect(ScheduleLogs)>
@@ -285,24 +232,26 @@ exports[`<ScheduleLogs /> render correctly when schedule logs is empty and data 
   <Connect(ScheduleLogs)>
     <ScheduleLogs
       fetchScheduleLogs={[Function]}
-      logs={Array []}
+      isSelected={false}
+      logs={false}
+      resetSelectedSchedule={[Function]}
+      scheduleName={false}
       status={1}
       texts={
         Object {
           "buttonRetryText": "Retry",
           "emptyMessageText": "No schedules logs available.",
           "errorMessageText": "Something went wrong ...",
+          "noSelectedScheduleText": "Please select a schedule.",
         }
       }
     >
-      <div>
-        <div
-          className="info"
-        >
-          <p>
-            No schedules logs available.
-          </p>
-        </div>
+      <div
+        className="info"
+      >
+        <p>
+          Please select a schedule.
+        </p>
       </div>
     </ScheduleLogs>
   </Connect(ScheduleLogs)>
@@ -325,24 +274,26 @@ exports[`<ScheduleLogs /> render correctly when schedule logs is undefined and d
   <Connect(ScheduleLogs)>
     <ScheduleLogs
       fetchScheduleLogs={[Function]}
-      logs={Array []}
+      isSelected={false}
+      logs={false}
+      resetSelectedSchedule={[Function]}
+      scheduleName={false}
       status={1}
       texts={
         Object {
           "buttonRetryText": "Retry",
           "emptyMessageText": "No schedules logs available.",
           "errorMessageText": "Something went wrong ...",
+          "noSelectedScheduleText": "Please select a schedule.",
         }
       }
     >
-      <div>
-        <div
-          className="info"
-        >
-          <p>
-            No schedules logs available.
-          </p>
-        </div>
+      <div
+        className="info"
+      >
+        <p>
+          Please select a schedule.
+        </p>
       </div>
     </ScheduleLogs>
   </Connect(ScheduleLogs)>

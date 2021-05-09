@@ -1,7 +1,7 @@
 import { AppActions } from './actions';
 import { AppState, StatusState } from '../appState';
 import { appInitialState } from '../initialState';
-import { FETCH_SCHEDULE_SUCCESS, FETCH_SCHEDULE_FAILURE, FETCH_SCHEDULE_LOGS_SUCCESS, FETCH_SCHEDULE_LOGS_FAILURE, REQUEST_RETIRE_SCHEDULE, REQUEST_UNRETIRE_SCHEDULE, UPDATE_SELECTED_SCHEDULE } from '../types';
+import { FETCH_SCHEDULE_SUCCESS, FETCH_SCHEDULE_FAILURE, FETCH_SCHEDULE_LOGS_SUCCESS, FETCH_SCHEDULE_LOGS_FAILURE, REQUEST_RETIRE_SCHEDULE, REQUEST_UNRETIRE_SCHEDULE, UPDATE_SELECTED_SCHEDULE, RESET_SELECTED_SCHEDULE } from '../types';
 import _ from 'lodash';
 
 
@@ -14,11 +14,9 @@ export const appReducer = (
          * Fetch Schedule
          */
         case FETCH_SCHEDULE_SUCCESS: {
-            const hasItems = Array.isArray(action.schedules) && action.schedules.length > 0;
             return {
                 ...state,
                 schedules: action.schedules,
-                selectedScheduleId: hasItems ? action.schedules[0].id : undefined,
                 status: {
                     ...state.status,
                     schedules: StatusState.Success,
@@ -84,6 +82,12 @@ export const appReducer = (
             return {
                 ...state,
                 selectedScheduleId: action.scheduleId,
+            };
+        }
+        case RESET_SELECTED_SCHEDULE: {
+            return {
+                ...state,
+                selectedScheduleId: undefined,
             };
         }
         /**
