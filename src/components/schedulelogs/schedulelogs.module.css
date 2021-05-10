@@ -25,6 +25,12 @@
 .noinfo {
 }
 
+.schedulelogs {
+    overflow-x: hidden;
+    overflow: scroll;
+    height: 100%;
+}
+
 @media (max-width: 480px) {
     .schedulelogs {
         position: fixed;
