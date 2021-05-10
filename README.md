@@ -65,9 +65,7 @@ Actions must be plain objects. Use custom middleware for async actions.
 
 2. The Test Coverage Summary is:
 
-=============================== Coverage summary ===============================
-Statements   : 63.86% ( 129/202 )
-Branches     : 66.67% ( 50/75 )
-Functions    : 55.42% ( 46/83 )
-Lines        : 65.71% ( 115/175 )
-================================================================================
+* Statements   : 63.86% ( 129/202 )
+* Branches     : 66.67% ( 50/75 )
+* Functions    : 55.42% ( 46/83 )
+* Lines        : 65.71% ( 115/175 )
