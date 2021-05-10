@@ -3,7 +3,33 @@ import { Action } from 'redux';
 import { config } from '../../config';
 import { AppDispatch } from '../store';
 import { avatarInitialState } from '../../redux/initialState';
-import { FETCH_SCHEDULE_SUCCESS, FETCH_SCHEDULE_FAILURE, FETCH_SCHEDULE_LOGS_SUCCESS, FETCH_SCHEDULE_LOGS_FAILURE, REQUEST_RETIRE_SCHEDULE, REQUEST_UNRETIRE_SCHEDULE, UPDATE_SELECTED_SCHEDULE, RESET_SELECTED_SCHEDULE } from "../types";
+import { FETCH_SCHEDULE_SUCCESS, FETCH_SCHEDULE_FAILURE, FETCH_SCHEDULE_LOGS_SUCCESS, FETCH_SCHEDULE_LOGS_FAILURE, REQUEST_RETIRE_SCHEDULE, REQUEST_UNRETIRE_SCHEDULE, UPDATE_SELECTED_SCHEDULE, RESET_SELECTED_SCHEDULE, LOADING_SCHEDULES_STATUS, LOADING_SCHEDULELOGS_STATUS } from "../types";
+
+/**
+ ** This type is used when the action setLoadingStatusForSchedules is dispatched.
+ */
+export interface SetLoadingStatusForSchedules extends Action<string> {
+}
+
+/**
+ ** This action is dispatched when the schedules data is not fetched sucessfully and the user try to fetch it again.
+ */
+export const setLoadingStatusForSchedules = (): SetLoadingStatusForSchedules => ({
+    type: LOADING_SCHEDULES_STATUS,
+});
+
+/**
+ ** This type is used when the action setLoadingStatusForScheduleLogs is dispatched.
+ */
+export interface SetLoadingStatusForScheduleLogs extends Action<string> {
+}
+
+/**
+ ** This action is dispatched when the schedule logs data is not fetched sucessfully and the user try to fetch it again.
+ */
+export const setLoadingStatusForScheduleLogs = (): SetLoadingStatusForScheduleLogs => ({
+    type: LOADING_SCHEDULELOGS_STATUS,
+});
 
 /**
  ** This type is used when the action fetchScheduleSuccessfullyAction is dispatched.
@@ -125,6 +151,7 @@ export const resetSelectedSchedule = (): ResetSelectedSchedule => ({
  */
 export const getSchedulesAction = (): ((dispatch: AppDispatch) => Promise<void>) => {
     return dispatch => {
+        dispatch(setLoadingStatusForSchedules());
         return axios.get(`${config.host}${config.path.schedules}`)
             .then(({ data }) => {
                 if (Array.isArray(data)) {
@@ -148,6 +175,7 @@ export const getSchedulesAction = (): ((dispatch: AppDispatch) => Promise<void>)
  */
 export const getScheduleLogsAction = (): ((dispatch: AppDispatch) => Promise<void>) => {
     return dispatch => {
+        dispatch(setLoadingStatusForScheduleLogs());
         return axios.get(`${config.host}${config.path.scheduleLogs}`)
             .then(({ data }) => {
                 dispatch(fetchScheduleLogsSuccessfullyAction(data));

@@ -1,7 +1,7 @@
 import { AppActions } from './actions';
 import { AppState, StatusState } from '../appState';
 import { appInitialState } from '../initialState';
-import { FETCH_SCHEDULE_SUCCESS, FETCH_SCHEDULE_FAILURE, FETCH_SCHEDULE_LOGS_SUCCESS, FETCH_SCHEDULE_LOGS_FAILURE, REQUEST_RETIRE_SCHEDULE, REQUEST_UNRETIRE_SCHEDULE, UPDATE_SELECTED_SCHEDULE, RESET_SELECTED_SCHEDULE } from '../types';
+import { FETCH_SCHEDULE_SUCCESS, FETCH_SCHEDULE_FAILURE, FETCH_SCHEDULE_LOGS_SUCCESS, FETCH_SCHEDULE_LOGS_FAILURE, REQUEST_RETIRE_SCHEDULE, REQUEST_UNRETIRE_SCHEDULE, UPDATE_SELECTED_SCHEDULE, RESET_SELECTED_SCHEDULE, LOADING_SCHEDULES_STATUS, LOADING_SCHEDULELOGS_STATUS } from '../types';
 import _ from 'lodash';
 
 
@@ -10,6 +10,26 @@ export const appReducer = (
     action: AppActions
 ): AppState => {
     switch (action.type) {
+        case LOADING_SCHEDULES_STATUS: {
+            return {
+                ...state,
+                schedules: action.schedules,
+                status: {
+                    ...state.status,
+                    schedules: StatusState.Loading,
+                },
+            };
+        }
+        case LOADING_SCHEDULELOGS_STATUS: {
+            return {
+                ...state,
+                schedules: action.schedules,
+                status: {
+                    ...state.status,
+                    scheduleLogs: StatusState.Loading,
+                },
+            };
+        }
         /**
          * Fetch Schedule
          */
