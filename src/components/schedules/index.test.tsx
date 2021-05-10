@@ -10,8 +10,9 @@ import thunk from 'redux-thunk';
 
 Enzyme.configure({ adapter: new Adapter() });
 
+const scheduleId = 40469125;
 const schedule: ScheduleState = {
-    id: 40469125,
+    id: scheduleId,
     avatar: {
         letter: 'J',
         color: 'purple',
@@ -32,12 +33,14 @@ const schedule: ScheduleState = {
 
 const getMountWrapper = (
     schedulesStatus: StatusState,
-    schedulesData: ScheduleState[]
+    schedulesData: ScheduleState[],
+    visibleScheduleIds: number[] = undefined,
 ) => {
     const store = configureMockStore([thunk])({
       app: {
         ...appInitialState,
         schedules: schedulesData ?? appInitialState.schedules,
+        visibleScheduleIds: visibleScheduleIds ?? [scheduleId],
         status: {
             ...appInitialState.status,
             schedules:schedulesStatus
@@ -52,20 +55,24 @@ const getMountWrapper = (
 };
 
 describe('<Schedules />', () => {
-    it('render correctly when schedules has an array data and data was saved sucessfully', () => {
-        const component = getMountWrapper(StatusState.Success, [schedule]);
-        expect(toJson(component)).toMatchSnapshot();
-    });
-    it('render correctly when schedules is empty and data was saved sucessfully', () => {
-        const component = getMountWrapper(StatusState.Success, []);
-        expect(toJson(component)).toMatchSnapshot();
-    });
-    it('render correctly when schedules is undefined and data was saved sucessfully', () => {
-        const component = getMountWrapper(StatusState.Success, undefined);
-        expect(toJson(component)).toMatchSnapshot();
-    });
     it('render correctly when schedules couldn\'t be fetched and data was saved as failure', () => {
         const component = getMountWrapper(StatusState.Failure, []);
         expect(toJson(component)).toMatchSnapshot();
+        expect(component.find('[data-test="schedules_failed"]').exists()).toBeTruthy();
+    });
+    it('render correctly when schedules has an array data and data was saved sucessfully', () => {
+        const component = getMountWrapper(StatusState.Success, [schedule]);
+        expect(toJson(component)).toMatchSnapshot();
+        expect(component.find('[data-test="schedules_loaded_with_data"]').exists()).toBeTruthy();
+    });
+    it('render correctly when schedules are not empty, data was saved sucessfully, but search criteria is not found', () => {
+        const component = getMountWrapper(StatusState.Success, [schedule], []);
+        expect(toJson(component)).toMatchSnapshot();
+        expect(component.find('[data-test="schedules_loaded_search_result"]').exists()).toBeTruthy();
+    });
+    it('render correctly when schedules is undefined and data was saved sucessfully', () => {
+        const component = getMountWrapper(StatusState.Success, [], []);
+        expect(toJson(component)).toMatchSnapshot();
+        expect(component.find('[data-test="schedules_loaded_without_data"]').exists()).toBeTruthy();
     });
 });

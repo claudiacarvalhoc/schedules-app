@@ -33,9 +33,11 @@ describe('<Header />', () => {
     it('render correctly when data is being fetched', () => {
         const component = getMountWrapper();
         expect(toJson(component)).toMatchSnapshot();
+        expect(component.find('[data-test="app_show_loading"]').exists()).toBeTruthy();
     });
     it('render correctly when data is fetched', () => {
-      const component = getMountWrapper();
+      const component = getMountWrapper(StatusState.Success);
       expect(toJson(component)).toMatchSnapshot();
+      expect(component.find('[data-test="app_load_schedules"]').exists()).toBeTruthy();
   });
 });

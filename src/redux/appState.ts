@@ -115,6 +115,7 @@ export interface ScheduleTextState {
     errorMessageText: string;
     buttonRetryText: string;
     emptyMessageText: string;
+    emptySearchResultText: string;
 }
 
 /**

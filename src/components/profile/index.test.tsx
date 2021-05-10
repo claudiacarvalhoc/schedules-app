@@ -17,6 +17,7 @@ describe('<Profile />', () => {
         };
         const component = getShallowWrapper(props);
         expect(toJson(component)).toMatchSnapshot();
+        expect(component.find('.orange').exists()).toBeTruthy();
     });
     it('render correctly with color purple', () => {
         const props: ProfileProps = {
@@ -25,5 +26,6 @@ describe('<Profile />', () => {
         };
         const component = getShallowWrapper(props);
         expect(toJson(component)).toMatchSnapshot();
+        expect(component.find('.purple').exists()).toBeTruthy();
     });
 });

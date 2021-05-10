@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { getSchedulesStatus, getSchedules, getScheduleText, getSelectedScheduleId } from '../../redux/app/selectors';
+import { getSchedulesStatus, getSchedules, getScheduleText, getSelectedScheduleId, isSearchApplied } from '../../redux/app/selectors';
 import { RootState } from '../../redux/reducers';
 import { ScheduleState, ScheduleTextState, StatusState } from '../../redux/appState';
 import { AppDispatch } from '../../redux/store';
@@ -16,6 +16,7 @@ export interface SchedulesStateProps {
   schedules: ScheduleState[],
   texts: ScheduleTextState;
   selectedScheduleId: number;
+  isSearchApplied: boolean;
 }
 
 export interface SchedulesDispatchProps {
@@ -30,6 +31,7 @@ const Schedules: FC<SchedulesProps> = ({
   schedules,
   selectedScheduleId,
   fetchSchedules,
+  isSearchApplied,
  }) => {
   const isSuccessfull = status === StatusState.Success;
   const isFailure = status === StatusState.Failure;
@@ -40,7 +42,10 @@ const Schedules: FC<SchedulesProps> = ({
   <div className={styles.container}>
 
       {isFailure && (
-        <div className={styles.info}>
+        <div
+          className={styles.info}
+          data-test="schedules_failed"
+          >
           <p>{texts.errorMessageText}</p>
           <Button
             onClick={() => fetchSchedules()}
@@ -52,13 +57,28 @@ const Schedules: FC<SchedulesProps> = ({
         </div>
       )}
 
-      {isSuccessfull && !hasItems &&  (
-        <div className={styles.info}>
+      {isSuccessfull && !hasItems && !isSearchApplied &&  (
+        <div
+          className={styles.info}
+          data-test="schedules_loaded_without_data"
+          >
           <p>{texts.emptyMessageText}</p>
         </div>
       )}
 
-      <div className={styles.items}>
+      {isSuccessfull && !hasItems && isSearchApplied &&  (
+        <div
+          className={styles.info}
+          data-test="schedules_loaded_search_result"
+          >
+          <p>{texts.emptySearchResultText}</p>
+        </div>
+      )}
+
+      <div
+        className={styles.items}
+        data-test="schedules_loaded_with_data"
+        >
       {isSuccessfull && hasItems && (schedules.map(n => {
         const isSelected = n.id === selectedScheduleId;
         return <ScheduleItem key={n.id} schedule={n} isSelected={isSelected} />;
@@ -72,6 +92,7 @@ const mapStateToProps = (state: RootState): SchedulesStateProps => ({
   schedules: getSchedules(state),
   texts: getScheduleText(state),
   selectedScheduleId: getSelectedScheduleId(state),
+  isSearchApplied: isSearchApplied(state),
 });
 
 const mapDispatchToProps = (

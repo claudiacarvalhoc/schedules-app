@@ -1,5 +1,56 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<Schedules /> render correctly when schedules are not empty, data was saved sucessfully, but search criteria is not found 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Connect(Schedules)>
+    <Schedules
+      fetchSchedules={[Function]}
+      isSearchApplied={true}
+      schedules={Array []}
+      status={1}
+      texts={
+        Object {
+          "buttonRetireText": "Retire",
+          "buttonRetryText": "Retry",
+          "buttonUnretireText": "Unretire",
+          "emptyMessageText": "No schedules available.",
+          "emptySearchResultText": "Sorry, no schedules were found for that criteria",
+          "errorMessageText": "Something went wrong ...",
+        }
+      }
+    >
+      <div
+        className="container"
+      >
+        <div
+          className="info"
+          data-test="schedules_loaded_search_result"
+        >
+          <p>
+            Sorry, no schedules were found for that criteria
+          </p>
+        </div>
+        <div
+          className="items"
+          data-test="schedules_loaded_with_data"
+        />
+      </div>
+    </Schedules>
+  </Connect(Schedules)>
+</Provider>
+`;
+
 exports[`<Schedules /> render correctly when schedules couldn't be fetched and data was saved as failure 1`] = `
 <Provider
   store={
@@ -16,6 +67,7 @@ exports[`<Schedules /> render correctly when schedules couldn't be fetched and d
   <Connect(Schedules)>
     <Schedules
       fetchSchedules={[Function]}
+      isSearchApplied={false}
       schedules={Array []}
       status={2}
       texts={
@@ -24,6 +76,7 @@ exports[`<Schedules /> render correctly when schedules couldn't be fetched and d
           "buttonRetryText": "Retry",
           "buttonUnretireText": "Unretire",
           "emptyMessageText": "No schedules available.",
+          "emptySearchResultText": "Sorry, no schedules were found for that criteria",
           "errorMessageText": "Something went wrong ...",
         }
       }
@@ -33,6 +86,7 @@ exports[`<Schedules /> render correctly when schedules couldn't be fetched and d
       >
         <div
           className="info"
+          data-test="schedules_failed"
         >
           <p>
             Something went wrong ...
@@ -166,6 +220,7 @@ exports[`<Schedules /> render correctly when schedules couldn't be fetched and d
         </div>
         <div
           className="items"
+          data-test="schedules_loaded_with_data"
         />
       </div>
     </Schedules>
@@ -189,7 +244,30 @@ exports[`<Schedules /> render correctly when schedules has an array data and dat
   <Connect(Schedules)>
     <Schedules
       fetchSchedules={[Function]}
-      schedules={Array []}
+      isSearchApplied={false}
+      schedules={
+        Array [
+          Object {
+            "avatar": Object {
+              "color": "purple",
+              "letter": "J",
+            },
+            "dayOfMonth": 31,
+            "dayOfWeek": 6,
+            "description": "mollit in ipsum laboris amet",
+            "endDate": 2021-05-05T00:00:00.000Z,
+            "endPoint": 2021-05-05T00:00:00.000Z,
+            "id": 40469125,
+            "intervalType": 2,
+            "isRetired": false,
+            "name": "Random Schedule Name (0.6936307155251857)",
+            "startDate": 2021-05-05T00:00:00.000Z,
+            "startPoint": 2021-05-05T00:00:00.000Z,
+            "tasksCount": 6,
+            "timePeriod": 30,
+          },
+        ]
+      }
       status={1}
       texts={
         Object {
@@ -197,6 +275,7 @@ exports[`<Schedules /> render correctly when schedules has an array data and dat
           "buttonRetryText": "Retry",
           "buttonUnretireText": "Unretire",
           "emptyMessageText": "No schedules available.",
+          "emptySearchResultText": "Sorry, no schedules were found for that criteria",
           "errorMessageText": "Something went wrong ...",
         }
       }
@@ -205,62 +284,453 @@ exports[`<Schedules /> render correctly when schedules has an array data and dat
         className="container"
       >
         <div
-          className="info"
-        >
-          <p>
-            No schedules available.
-          </p>
-        </div>
-        <div
           className="items"
-        />
-      </div>
-    </Schedules>
-  </Connect(Schedules)>
-</Provider>
-`;
-
-exports[`<Schedules /> render correctly when schedules is empty and data was saved sucessfully 1`] = `
-<Provider
-  store={
-    Object {
-      "clearActions": [Function],
-      "dispatch": [Function],
-      "getActions": [Function],
-      "getState": [Function],
-      "replaceReducer": [Function],
-      "subscribe": [Function],
-    }
-  }
->
-  <Connect(Schedules)>
-    <Schedules
-      fetchSchedules={[Function]}
-      schedules={Array []}
-      status={1}
-      texts={
-        Object {
-          "buttonRetireText": "Retire",
-          "buttonRetryText": "Retry",
-          "buttonUnretireText": "Unretire",
-          "emptyMessageText": "No schedules available.",
-          "errorMessageText": "Something went wrong ...",
-        }
-      }
-    >
-      <div
-        className="container"
-      >
-        <div
-          className="info"
+          data-test="schedules_loaded_with_data"
         >
-          <p>
-            No schedules available.
-          </p>
+          <Connect(ScheduleItem)
+            isSelected={false}
+            key="40469125"
+            schedule={
+              Object {
+                "avatar": Object {
+                  "color": "purple",
+                  "letter": "J",
+                },
+                "dayOfMonth": 31,
+                "dayOfWeek": 6,
+                "description": "mollit in ipsum laboris amet",
+                "endDate": 2021-05-05T00:00:00.000Z,
+                "endPoint": 2021-05-05T00:00:00.000Z,
+                "id": 40469125,
+                "intervalType": 2,
+                "isRetired": false,
+                "name": "Random Schedule Name (0.6936307155251857)",
+                "startDate": 2021-05-05T00:00:00.000Z,
+                "startPoint": 2021-05-05T00:00:00.000Z,
+                "tasksCount": 6,
+                "timePeriod": 30,
+              }
+            }
+          >
+            <ScheduleItem
+              isSelected={false}
+              retire={[Function]}
+              schedule={
+                Object {
+                  "avatar": Object {
+                    "color": "purple",
+                    "letter": "J",
+                  },
+                  "dayOfMonth": 31,
+                  "dayOfWeek": 6,
+                  "description": "mollit in ipsum laboris amet",
+                  "endDate": 2021-05-05T00:00:00.000Z,
+                  "endPoint": 2021-05-05T00:00:00.000Z,
+                  "id": 40469125,
+                  "intervalType": 2,
+                  "isRetired": false,
+                  "name": "Random Schedule Name (0.6936307155251857)",
+                  "startDate": 2021-05-05T00:00:00.000Z,
+                  "startPoint": 2021-05-05T00:00:00.000Z,
+                  "tasksCount": 6,
+                  "timePeriod": 30,
+                }
+              }
+              texts={
+                Object {
+                  "buttonRetireText": "Retire",
+                  "buttonRetryText": "Retry",
+                  "buttonUnretireText": "Unretire",
+                  "emptyMessageText": "No schedules available.",
+                  "emptySearchResultText": "Sorry, no schedules were found for that criteria",
+                  "errorMessageText": "Something went wrong ...",
+                }
+              }
+              unretire={[Function]}
+              updateSelectedId={[Function]}
+            >
+              <div
+                className="container"
+              >
+                <WithStyles(ForwardRef(Card))
+                  className=""
+                  data-test="card_40469125"
+                  onClick={[Function]}
+                  variant="outlined"
+                >
+                  <ForwardRef(Card)
+                    className=""
+                    classes={
+                      Object {
+                        "root": "MuiCard-root",
+                      }
+                    }
+                    data-test="card_40469125"
+                    onClick={[Function]}
+                    variant="outlined"
+                  >
+                    <WithStyles(ForwardRef(Paper))
+                      className="MuiCard-root"
+                      data-test="card_40469125"
+                      elevation={1}
+                      onClick={[Function]}
+                      variant="outlined"
+                    >
+                      <ForwardRef(Paper)
+                        className="MuiCard-root"
+                        classes={
+                          Object {
+                            "elevation0": "MuiPaper-elevation0",
+                            "elevation1": "MuiPaper-elevation1",
+                            "elevation10": "MuiPaper-elevation10",
+                            "elevation11": "MuiPaper-elevation11",
+                            "elevation12": "MuiPaper-elevation12",
+                            "elevation13": "MuiPaper-elevation13",
+                            "elevation14": "MuiPaper-elevation14",
+                            "elevation15": "MuiPaper-elevation15",
+                            "elevation16": "MuiPaper-elevation16",
+                            "elevation17": "MuiPaper-elevation17",
+                            "elevation18": "MuiPaper-elevation18",
+                            "elevation19": "MuiPaper-elevation19",
+                            "elevation2": "MuiPaper-elevation2",
+                            "elevation20": "MuiPaper-elevation20",
+                            "elevation21": "MuiPaper-elevation21",
+                            "elevation22": "MuiPaper-elevation22",
+                            "elevation23": "MuiPaper-elevation23",
+                            "elevation24": "MuiPaper-elevation24",
+                            "elevation3": "MuiPaper-elevation3",
+                            "elevation4": "MuiPaper-elevation4",
+                            "elevation5": "MuiPaper-elevation5",
+                            "elevation6": "MuiPaper-elevation6",
+                            "elevation7": "MuiPaper-elevation7",
+                            "elevation8": "MuiPaper-elevation8",
+                            "elevation9": "MuiPaper-elevation9",
+                            "outlined": "MuiPaper-outlined",
+                            "root": "MuiPaper-root",
+                            "rounded": "MuiPaper-rounded",
+                          }
+                        }
+                        data-test="card_40469125"
+                        elevation={1}
+                        onClick={[Function]}
+                        variant="outlined"
+                      >
+                        <div
+                          className="MuiPaper-root MuiCard-root MuiPaper-outlined MuiPaper-rounded"
+                          data-test="card_40469125"
+                          onClick={[Function]}
+                        >
+                          <WithStyles(ForwardRef(CardContent))
+                            className="content"
+                          >
+                            <ForwardRef(CardContent)
+                              className="content"
+                              classes={
+                                Object {
+                                  "root": "MuiCardContent-root",
+                                }
+                              }
+                            >
+                              <div
+                                className="MuiCardContent-root content"
+                              >
+                                <div
+                                  className="header"
+                                >
+                                  <Profile
+                                    color="purple"
+                                    letter="J"
+                                  >
+                                    <WithStyles(ForwardRef(Avatar))
+                                      className="purple"
+                                    >
+                                      <ForwardRef(Avatar)
+                                        className="purple"
+                                        classes={
+                                          Object {
+                                            "circle": "MuiAvatar-circle",
+                                            "circular": "MuiAvatar-circular",
+                                            "colorDefault": "MuiAvatar-colorDefault",
+                                            "fallback": "MuiAvatar-fallback",
+                                            "img": "MuiAvatar-img",
+                                            "root": "MuiAvatar-root",
+                                            "rounded": "MuiAvatar-rounded",
+                                            "square": "MuiAvatar-square",
+                                          }
+                                        }
+                                      >
+                                        <div
+                                          className="MuiAvatar-root MuiAvatar-circle purple MuiAvatar-colorDefault"
+                                        >
+                                          J
+                                        </div>
+                                      </ForwardRef(Avatar)>
+                                    </WithStyles(ForwardRef(Avatar))>
+                                  </Profile>
+                                  <WithStyles(ForwardRef(Typography))
+                                    className="title"
+                                    color="textSecondary"
+                                    gutterBottom={true}
+                                  >
+                                    <ForwardRef(Typography)
+                                      className="title"
+                                      classes={
+                                        Object {
+                                          "alignCenter": "MuiTypography-alignCenter",
+                                          "alignJustify": "MuiTypography-alignJustify",
+                                          "alignLeft": "MuiTypography-alignLeft",
+                                          "alignRight": "MuiTypography-alignRight",
+                                          "body1": "MuiTypography-body1",
+                                          "body2": "MuiTypography-body2",
+                                          "button": "MuiTypography-button",
+                                          "caption": "MuiTypography-caption",
+                                          "colorError": "MuiTypography-colorError",
+                                          "colorInherit": "MuiTypography-colorInherit",
+                                          "colorPrimary": "MuiTypography-colorPrimary",
+                                          "colorSecondary": "MuiTypography-colorSecondary",
+                                          "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                                          "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                                          "displayBlock": "MuiTypography-displayBlock",
+                                          "displayInline": "MuiTypography-displayInline",
+                                          "gutterBottom": "MuiTypography-gutterBottom",
+                                          "h1": "MuiTypography-h1",
+                                          "h2": "MuiTypography-h2",
+                                          "h3": "MuiTypography-h3",
+                                          "h4": "MuiTypography-h4",
+                                          "h5": "MuiTypography-h5",
+                                          "h6": "MuiTypography-h6",
+                                          "noWrap": "MuiTypography-noWrap",
+                                          "overline": "MuiTypography-overline",
+                                          "paragraph": "MuiTypography-paragraph",
+                                          "root": "MuiTypography-root",
+                                          "srOnly": "MuiTypography-srOnly",
+                                          "subtitle1": "MuiTypography-subtitle1",
+                                          "subtitle2": "MuiTypography-subtitle2",
+                                        }
+                                      }
+                                      color="textSecondary"
+                                      gutterBottom={true}
+                                    >
+                                      <p
+                                        className="MuiTypography-root title MuiTypography-body1 MuiTypography-colorTextSecondary MuiTypography-gutterBottom"
+                                      >
+                                        Random Schedule Name (0.6936307155251857)
+                                      </p>
+                                    </ForwardRef(Typography)>
+                                  </WithStyles(ForwardRef(Typography))>
+                                </div>
+                                <WithStyles(ForwardRef(Typography))
+                                  component="p"
+                                  variant="body2"
+                                >
+                                  <ForwardRef(Typography)
+                                    classes={
+                                      Object {
+                                        "alignCenter": "MuiTypography-alignCenter",
+                                        "alignJustify": "MuiTypography-alignJustify",
+                                        "alignLeft": "MuiTypography-alignLeft",
+                                        "alignRight": "MuiTypography-alignRight",
+                                        "body1": "MuiTypography-body1",
+                                        "body2": "MuiTypography-body2",
+                                        "button": "MuiTypography-button",
+                                        "caption": "MuiTypography-caption",
+                                        "colorError": "MuiTypography-colorError",
+                                        "colorInherit": "MuiTypography-colorInherit",
+                                        "colorPrimary": "MuiTypography-colorPrimary",
+                                        "colorSecondary": "MuiTypography-colorSecondary",
+                                        "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                                        "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                                        "displayBlock": "MuiTypography-displayBlock",
+                                        "displayInline": "MuiTypography-displayInline",
+                                        "gutterBottom": "MuiTypography-gutterBottom",
+                                        "h1": "MuiTypography-h1",
+                                        "h2": "MuiTypography-h2",
+                                        "h3": "MuiTypography-h3",
+                                        "h4": "MuiTypography-h4",
+                                        "h5": "MuiTypography-h5",
+                                        "h6": "MuiTypography-h6",
+                                        "noWrap": "MuiTypography-noWrap",
+                                        "overline": "MuiTypography-overline",
+                                        "paragraph": "MuiTypography-paragraph",
+                                        "root": "MuiTypography-root",
+                                        "srOnly": "MuiTypography-srOnly",
+                                        "subtitle1": "MuiTypography-subtitle1",
+                                        "subtitle2": "MuiTypography-subtitle2",
+                                      }
+                                    }
+                                    component="p"
+                                    variant="body2"
+                                  >
+                                    <p
+                                      className="MuiTypography-root MuiTypography-body2"
+                                    >
+                                      mollit in ipsum laboris amet
+                                    </p>
+                                  </ForwardRef(Typography)>
+                                </WithStyles(ForwardRef(Typography))>
+                              </div>
+                            </ForwardRef(CardContent)>
+                          </WithStyles(ForwardRef(CardContent))>
+                          <WithStyles(ForwardRef(CardActions))
+                            className="action"
+                          >
+                            <ForwardRef(CardActions)
+                              className="action"
+                              classes={
+                                Object {
+                                  "root": "MuiCardActions-root",
+                                  "spacing": "MuiCardActions-spacing",
+                                }
+                              }
+                            >
+                              <div
+                                className="MuiCardActions-root action MuiCardActions-spacing"
+                              >
+                                <ButtonAction
+                                  data-test="action_40469125_retire"
+                                  onClick={[Function]}
+                                  text="Retire"
+                                  type="secondary"
+                                >
+                                  <WithStyles(ForwardRef(Button))
+                                    color="secondary"
+                                    onClick={[Function]}
+                                    size="small"
+                                    variant="outlined"
+                                  >
+                                    <ForwardRef(Button)
+                                      classes={
+                                        Object {
+                                          "colorInherit": "MuiButton-colorInherit",
+                                          "contained": "MuiButton-contained",
+                                          "containedPrimary": "MuiButton-containedPrimary",
+                                          "containedSecondary": "MuiButton-containedSecondary",
+                                          "containedSizeLarge": "MuiButton-containedSizeLarge",
+                                          "containedSizeSmall": "MuiButton-containedSizeSmall",
+                                          "disableElevation": "MuiButton-disableElevation",
+                                          "disabled": "Mui-disabled",
+                                          "endIcon": "MuiButton-endIcon",
+                                          "focusVisible": "Mui-focusVisible",
+                                          "fullWidth": "MuiButton-fullWidth",
+                                          "iconSizeLarge": "MuiButton-iconSizeLarge",
+                                          "iconSizeMedium": "MuiButton-iconSizeMedium",
+                                          "iconSizeSmall": "MuiButton-iconSizeSmall",
+                                          "label": "MuiButton-label",
+                                          "outlined": "MuiButton-outlined",
+                                          "outlinedPrimary": "MuiButton-outlinedPrimary",
+                                          "outlinedSecondary": "MuiButton-outlinedSecondary",
+                                          "outlinedSizeLarge": "MuiButton-outlinedSizeLarge",
+                                          "outlinedSizeSmall": "MuiButton-outlinedSizeSmall",
+                                          "root": "MuiButton-root",
+                                          "sizeLarge": "MuiButton-sizeLarge",
+                                          "sizeSmall": "MuiButton-sizeSmall",
+                                          "startIcon": "MuiButton-startIcon",
+                                          "text": "MuiButton-text",
+                                          "textPrimary": "MuiButton-textPrimary",
+                                          "textSecondary": "MuiButton-textSecondary",
+                                          "textSizeLarge": "MuiButton-textSizeLarge",
+                                          "textSizeSmall": "MuiButton-textSizeSmall",
+                                        }
+                                      }
+                                      color="secondary"
+                                      onClick={[Function]}
+                                      size="small"
+                                      variant="outlined"
+                                    >
+                                      <WithStyles(ForwardRef(ButtonBase))
+                                        className="MuiButton-root MuiButton-outlined MuiButton-outlinedSecondary MuiButton-outlinedSizeSmall MuiButton-sizeSmall"
+                                        component="button"
+                                        disabled={false}
+                                        focusRipple={true}
+                                        focusVisibleClassName="Mui-focusVisible"
+                                        onClick={[Function]}
+                                        type="button"
+                                      >
+                                        <ForwardRef(ButtonBase)
+                                          className="MuiButton-root MuiButton-outlined MuiButton-outlinedSecondary MuiButton-outlinedSizeSmall MuiButton-sizeSmall"
+                                          classes={
+                                            Object {
+                                              "disabled": "Mui-disabled",
+                                              "focusVisible": "Mui-focusVisible",
+                                              "root": "MuiButtonBase-root",
+                                            }
+                                          }
+                                          component="button"
+                                          disabled={false}
+                                          focusRipple={true}
+                                          focusVisibleClassName="Mui-focusVisible"
+                                          onClick={[Function]}
+                                          type="button"
+                                        >
+                                          <button
+                                            className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSecondary MuiButton-outlinedSizeSmall MuiButton-sizeSmall"
+                                            disabled={false}
+                                            onBlur={[Function]}
+                                            onClick={[Function]}
+                                            onDragLeave={[Function]}
+                                            onFocus={[Function]}
+                                            onKeyDown={[Function]}
+                                            onKeyUp={[Function]}
+                                            onMouseDown={[Function]}
+                                            onMouseLeave={[Function]}
+                                            onMouseUp={[Function]}
+                                            onTouchEnd={[Function]}
+                                            onTouchMove={[Function]}
+                                            onTouchStart={[Function]}
+                                            tabIndex={0}
+                                            type="button"
+                                          >
+                                            <span
+                                              className="MuiButton-label"
+                                            >
+                                              Retire
+                                            </span>
+                                            <WithStyles(memo)
+                                              center={false}
+                                            >
+                                              <ForwardRef(TouchRipple)
+                                                center={false}
+                                                classes={
+                                                  Object {
+                                                    "child": "MuiTouchRipple-child",
+                                                    "childLeaving": "MuiTouchRipple-childLeaving",
+                                                    "childPulsate": "MuiTouchRipple-childPulsate",
+                                                    "ripple": "MuiTouchRipple-ripple",
+                                                    "ripplePulsate": "MuiTouchRipple-ripplePulsate",
+                                                    "rippleVisible": "MuiTouchRipple-rippleVisible",
+                                                    "root": "MuiTouchRipple-root",
+                                                  }
+                                                }
+                                              >
+                                                <span
+                                                  className="MuiTouchRipple-root"
+                                                >
+                                                  <TransitionGroup
+                                                    childFactory={[Function]}
+                                                    component={null}
+                                                    exit={true}
+                                                  />
+                                                </span>
+                                              </ForwardRef(TouchRipple)>
+                                            </WithStyles(memo)>
+                                          </button>
+                                        </ForwardRef(ButtonBase)>
+                                      </WithStyles(ForwardRef(ButtonBase))>
+                                    </ForwardRef(Button)>
+                                  </WithStyles(ForwardRef(Button))>
+                                </ButtonAction>
+                              </div>
+                            </ForwardRef(CardActions)>
+                          </WithStyles(ForwardRef(CardActions))>
+                        </div>
+                      </ForwardRef(Paper)>
+                    </WithStyles(ForwardRef(Paper))>
+                  </ForwardRef(Card)>
+                </WithStyles(ForwardRef(Card))>
+              </div>
+            </ScheduleItem>
+          </Connect(ScheduleItem)>
         </div>
-        <div
-          className="items"
-        />
       </div>
     </Schedules>
   </Connect(Schedules)>
@@ -283,6 +753,7 @@ exports[`<Schedules /> render correctly when schedules is undefined and data was
   <Connect(Schedules)>
     <Schedules
       fetchSchedules={[Function]}
+      isSearchApplied={false}
       schedules={Array []}
       status={1}
       texts={
@@ -291,6 +762,7 @@ exports[`<Schedules /> render correctly when schedules is undefined and data was
           "buttonRetryText": "Retry",
           "buttonUnretireText": "Unretire",
           "emptyMessageText": "No schedules available.",
+          "emptySearchResultText": "Sorry, no schedules were found for that criteria",
           "errorMessageText": "Something went wrong ...",
         }
       }
@@ -300,6 +772,7 @@ exports[`<Schedules /> render correctly when schedules is undefined and data was
       >
         <div
           className="info"
+          data-test="schedules_loaded_without_data"
         >
           <p>
             No schedules available.
@@ -307,6 +780,7 @@ exports[`<Schedules /> render correctly when schedules is undefined and data was
         </div>
         <div
           className="items"
+          data-test="schedules_loaded_with_data"
         />
       </div>
     </Schedules>

@@ -37,10 +37,17 @@ const App: FC<AppProps> = ({
 
       <Header/>
       {isLoading && (
-        <div className={styles.loading}>
+        <div
+          className={styles.loading}
+          data-test="app_show_loading"
+        >
           <ReactLoading type='spin' color='#000000' height={50} width={50} />
         </div>)}
-      {!isLoading && (<div className={styles.content}>
+      {!isLoading && (
+      <div
+        className={styles.content}
+        data-test="app_load_schedules"
+        >
         <Schedules />
         <ScheduleLogs />
       </div>)}

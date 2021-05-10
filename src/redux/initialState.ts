@@ -22,6 +22,7 @@ export const appInitialState: AppState = {
             errorMessageText: 'Something went wrong ...',
             buttonRetryText: 'Retry',
             emptyMessageText: 'No schedules available.',
+            emptySearchResultText: 'Sorry, no schedules were found for that criteria',
         },
         scheduleLogs: {
           errorMessageText: 'Something went wrong ...',

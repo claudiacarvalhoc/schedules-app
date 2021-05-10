@@ -39,11 +39,13 @@ const ScheduleLogs: FC<ScheduleLogsProps> = ({
   const isSuccessfull = status === StatusState.Success;
   const isFailure = status === StatusState.Failure;
   const hasLogItems = Array.isArray(logs) && logs.length > 0;
-
   return (
   <>
     {/* No Schedule Selected */}
-    {!isSelected && (<div className={styles.noinfo}>
+    {!isSelected && (
+    <div
+      className={styles.noinfo}
+      data-test="schedulelogs_no_selected_schedule">
       <p>{texts.noSelectedScheduleText}</p>
     </div>)}
     {isSelected && (
@@ -56,7 +58,10 @@ const ScheduleLogs: FC<ScheduleLogsProps> = ({
             <Typography className={styles.modalTitle} variant="h6">{scheduleName}</Typography>
             {/* FAILURE */}
             {isFailure && (
-              <div className={styles.failure}>
+              <div
+                className={styles.failure}
+                data-test="schedulelogs_load_failure_message"
+                >
                 <Typography className={styles.failureTitle} variant="body2" component="p">
                   {texts.errorMessageText}
                 </Typography>
@@ -72,13 +77,19 @@ const ScheduleLogs: FC<ScheduleLogsProps> = ({
             )}
             {/* SUCCESS WITHOUT DATA */}
             {isSuccessfull && !hasLogItems &&  (
-              <div className={styles.emptySuccess}>
+              <div
+                className={styles.emptySuccess}
+                data-test="schedulelogs_load_empty_items"
+                >
                 <p>{texts.emptyMessageText}</p>
               </div>
             )}
             {/*  SUCCESS WITH DATA */}
             {isSuccessfull && hasLogItems && (
-              <div className={styles.items}>
+              <div
+                className={styles.items}
+                data-test="schedulelogs_load_items"
+                >
                 {logs.map(n => <LogItem key={n.id} item={n} />)}
               </div>
             )}

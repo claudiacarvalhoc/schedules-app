@@ -271,6 +271,7 @@ exports[`<Header /> render correctly when data is being fetched 1`] = `
         </Connect(Header)>
         <div
           className="loading"
+          data-test="app_show_loading"
         >
           <Loading
             color="#000000"
@@ -323,7 +324,7 @@ exports[`<Header /> render correctly when data is fetched 1`] = `
   <Connect(App)>
     <App
       bootApp={[Function]}
-      isLoading={true}
+      isLoading={false}
     >
       <div
         className="container"
@@ -577,36 +578,71 @@ exports[`<Header /> render correctly when data is fetched 1`] = `
           </Header>
         </Connect(Header)>
         <div
-          className="loading"
+          className="content"
+          data-test="app_load_schedules"
         >
-          <Loading
-            color="#000000"
-            delay={0}
-            height={50}
-            type="spin"
-            width={50}
-          >
-            <div
-              dangerouslySetInnerHTML={
+          <Connect(Schedules)>
+            <Schedules
+              fetchSchedules={[Function]}
+              isSearchApplied={false}
+              schedules={Array []}
+              status={1}
+              texts={
                 Object {
-                  "__html": "<svg xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 32 32\\">
-  <path opacity=\\".25\\" d=\\"M16 0 A16 16 0 0 0 16 32 A16 16 0 0 0 16 0 M16 4 A12 12 0 0 1 16 28 A12 12 0 0 1 16 4\\"/>
-  <path d=\\"M16 0 A16 16 0 0 1 32 16 L28 16 A12 12 0 0 0 16 4z\\">
-    <animateTransform attributeName=\\"transform\\" type=\\"rotate\\" from=\\"0 16 16\\" to=\\"360 16 16\\" dur=\\"0.8s\\" repeatCount=\\"indefinite\\" />
-  </path>
-</svg>
-",
+                  "buttonRetireText": "Retire",
+                  "buttonRetryText": "Retry",
+                  "buttonUnretireText": "Unretire",
+                  "emptyMessageText": "No schedules available.",
+                  "emptySearchResultText": "Sorry, no schedules were found for that criteria",
+                  "errorMessageText": "Something went wrong ...",
                 }
               }
-              style={
+            >
+              <div
+                className="container"
+              >
+                <div
+                  className="info"
+                  data-test="schedules_loaded_without_data"
+                >
+                  <p>
+                    No schedules available.
+                  </p>
+                </div>
+                <div
+                  className="items"
+                  data-test="schedules_loaded_with_data"
+                />
+              </div>
+            </Schedules>
+          </Connect(Schedules)>
+          <Connect(ScheduleLogs)>
+            <ScheduleLogs
+              fetchScheduleLogs={[Function]}
+              isSelected={false}
+              logs={false}
+              resetSelectedSchedule={[Function]}
+              scheduleName={false}
+              status={1}
+              texts={
                 Object {
-                  "fill": "#000000",
-                  "height": 50,
-                  "width": 50,
+                  "buttonRetryText": "Retry",
+                  "emptyMessageText": "No schedules logs available.",
+                  "errorMessageText": "Something went wrong ...",
+                  "noSelectedScheduleText": "Please select a schedule.",
                 }
               }
-            />
-          </Loading>
+            >
+              <div
+                className="noinfo"
+                data-test="schedulelogs_no_selected_schedule"
+              >
+                <p>
+                  Please select a schedule.
+                </p>
+              </div>
+            </ScheduleLogs>
+          </Connect(ScheduleLogs)>
         </div>
       </div>
     </App>
