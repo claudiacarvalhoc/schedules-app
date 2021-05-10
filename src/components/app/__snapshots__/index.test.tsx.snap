@@ -23,7 +23,7 @@ exports[`<Header /> render correctly when data is being fetched 1`] = `
       >
         <Connect(Header)>
           <Header
-            dispatch={[Function]}
+            search={[Function]}
             title="Schedules"
           >
             <div
@@ -176,6 +176,7 @@ exports[`<Header /> render correctly when data is being fetched 1`] = `
                                       "aria-label": "search",
                                     }
                                   }
+                                  onChange={[Function]}
                                   placeholder="Search…"
                                 >
                                   <ForwardRef(InputBase)
@@ -206,6 +207,7 @@ exports[`<Header /> render correctly when data is being fetched 1`] = `
                                         "aria-label": "search",
                                       }
                                     }
+                                    onChange={[Function]}
                                     placeholder="Search…"
                                   >
                                     <div
@@ -328,7 +330,7 @@ exports[`<Header /> render correctly when data is fetched 1`] = `
       >
         <Connect(Header)>
           <Header
-            dispatch={[Function]}
+            search={[Function]}
             title="Schedules"
           >
             <div
@@ -481,6 +483,7 @@ exports[`<Header /> render correctly when data is fetched 1`] = `
                                       "aria-label": "search",
                                     }
                                   }
+                                  onChange={[Function]}
                                   placeholder="Search…"
                                 >
                                   <ForwardRef(InputBase)
@@ -511,6 +514,7 @@ exports[`<Header /> render correctly when data is fetched 1`] = `
                                         "aria-label": "search",
                                       }
                                     }
+                                    onChange={[Function]}
                                     placeholder="Search…"
                                   >
                                     <div

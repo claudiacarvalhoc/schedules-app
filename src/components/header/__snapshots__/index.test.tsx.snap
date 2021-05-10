@@ -15,7 +15,7 @@ exports[`<Header /> render correctly 1`] = `
 >
   <Connect(Header)>
     <Header
-      dispatch={[Function]}
+      search={[Function]}
       title="Schedule"
     >
       <div
@@ -168,6 +168,7 @@ exports[`<Header /> render correctly 1`] = `
                                 "aria-label": "search",
                               }
                             }
+                            onChange={[Function]}
                             placeholder="Search…"
                           >
                             <ForwardRef(InputBase)
@@ -198,6 +199,7 @@ exports[`<Header /> render correctly 1`] = `
                                   "aria-label": "search",
                                 }
                               }
+                              onChange={[Function]}
                               placeholder="Search…"
                             >
                               <div
