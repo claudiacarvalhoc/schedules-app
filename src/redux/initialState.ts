@@ -10,6 +10,7 @@ export const appInitialState: AppState = {
     },
     selectedScheduleId: undefined,
     schedules: [],
+    visibleScheduleIds: [],
     scheduleLogs: [],
     texts: {
         header: {

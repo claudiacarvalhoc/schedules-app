@@ -3,7 +3,7 @@ import { Action } from 'redux';
 import { config } from '../../config';
 import { AppDispatch } from '../store';
 import { avatarInitialState } from '../../redux/initialState';
-import { FETCH_SCHEDULE_SUCCESS, FETCH_SCHEDULE_FAILURE, FETCH_SCHEDULE_LOGS_SUCCESS, FETCH_SCHEDULE_LOGS_FAILURE, REQUEST_RETIRE_SCHEDULE, REQUEST_UNRETIRE_SCHEDULE, UPDATE_SELECTED_SCHEDULE, RESET_SELECTED_SCHEDULE, LOADING_SCHEDULES_STATUS, LOADING_SCHEDULELOGS_STATUS } from "../types";
+import { FETCH_SCHEDULE_SUCCESS, FETCH_SCHEDULE_FAILURE, FETCH_SCHEDULE_LOGS_SUCCESS, FETCH_SCHEDULE_LOGS_FAILURE, REQUEST_RETIRE_SCHEDULE, REQUEST_UNRETIRE_SCHEDULE, UPDATE_SELECTED_SCHEDULE, RESET_SELECTED_SCHEDULE, LOADING_SCHEDULES_STATUS, LOADING_SCHEDULELOGS_STATUS, SEARCH_SCHEDULE } from "../types";
 
 /**
  ** This type is used when the action setLoadingStatusForSchedules is dispatched.
@@ -145,6 +145,21 @@ export const resetSelectedSchedule = (): ResetSelectedSchedule => ({
 });
 
 /**
+ ** This type is used to search the schedules
+ */
+export interface SearchSchedule extends Action<string> {
+    criteria: string;
+}
+
+/**
+ * This action is dispatched to search the schedules and show a subset of schedules
+ */
+export const searchSchedule = (criteria: string): SearchSchedule => ({
+    type: SEARCH_SCHEDULE,
+    criteria,
+});
+
+/**
  * This function fetch the schedules list.
  * If fetch is sucessfull, is dispatched a successfull action to fill the schedules on store
  * Otherwise, a fectch error must be set on store.
@@ -186,4 +201,4 @@ export const getScheduleLogsAction = (): ((dispatch: AppDispatch) => Promise<voi
     };
 };
 
-export type AppActions = FetchScheduleSuccessfullyAction & FetchScheduleLogsFailureAction & FetchScheduleLogsSuccessfullyAction & FetchScheduleLogsFailureAction & RetireSchedule & UnretireSchedule & UpdateSelectedSchedule;
+export type AppActions = FetchScheduleSuccessfullyAction & FetchScheduleLogsFailureAction & FetchScheduleLogsSuccessfullyAction & FetchScheduleLogsFailureAction & RetireSchedule & UnretireSchedule & UpdateSelectedSchedule & SearchSchedule;

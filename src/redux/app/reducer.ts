@@ -1,7 +1,7 @@
 import { AppActions } from './actions';
 import { AppState, StatusState } from '../appState';
 import { appInitialState } from '../initialState';
-import { FETCH_SCHEDULE_SUCCESS, FETCH_SCHEDULE_FAILURE, FETCH_SCHEDULE_LOGS_SUCCESS, FETCH_SCHEDULE_LOGS_FAILURE, REQUEST_RETIRE_SCHEDULE, REQUEST_UNRETIRE_SCHEDULE, UPDATE_SELECTED_SCHEDULE, RESET_SELECTED_SCHEDULE, LOADING_SCHEDULES_STATUS, LOADING_SCHEDULELOGS_STATUS } from '../types';
+import { FETCH_SCHEDULE_SUCCESS, FETCH_SCHEDULE_FAILURE, FETCH_SCHEDULE_LOGS_SUCCESS, FETCH_SCHEDULE_LOGS_FAILURE, REQUEST_RETIRE_SCHEDULE, REQUEST_UNRETIRE_SCHEDULE, UPDATE_SELECTED_SCHEDULE, RESET_SELECTED_SCHEDULE, LOADING_SCHEDULES_STATUS, LOADING_SCHEDULELOGS_STATUS, SEARCH_SCHEDULE } from '../types';
 import _ from 'lodash';
 
 
@@ -14,6 +14,7 @@ export const appReducer = (
             return {
                 ...state,
                 schedules: [],
+                visibleScheduleIds: [],
                 selectedScheduleId: undefined,
                 status: {
                     ...state.status,
@@ -39,6 +40,7 @@ export const appReducer = (
             return {
                 ...state,
                 schedules: action.schedules,
+                visibleScheduleIds: action.schedules.map(n => n.id),
                 status: {
                     ...state.status,
                     schedules: StatusState.Success,
@@ -49,6 +51,7 @@ export const appReducer = (
             return {
                 ...state,
                 schedules: [],
+                visibleScheduleIds: [],
                 selectedScheduleId: undefined,
                 status: {
                     ...state.status,
@@ -110,6 +113,16 @@ export const appReducer = (
             return {
                 ...state,
                 selectedScheduleId: undefined,
+            };
+        }
+        /**
+         * Search Schedules
+         */
+        case SEARCH_SCHEDULE: {
+            const result = state.schedules.filter(n => n.name.includes(action.criteria)).map(n => n.id);
+            return {
+                ...state,
+                visibleScheduleIds: result,
             };
         }
         /**

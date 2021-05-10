@@ -1,5 +1,6 @@
 import { HeaderTextStatus, ScheduleTextState, ScheduleState, ScheduleLogState, StatusState, ScheduleLogsTextState, LogTextState } from "../appState";
 import { RootState } from "../reducers";
+import _ from 'lodash';
 
 /**
  * Get Fetch Status
@@ -11,7 +12,13 @@ export const getScheduleLogsStatus = (state: RootState): StatusState => state.ap
 /**
  * Get Schedules , Selected Shedule Id
  */
-export const getSchedules = (state: RootState): ScheduleState[] => state.app.schedules;
+export const getSchedules = (state: RootState): ScheduleState[] => {
+    const ids = state.app.visibleScheduleIds;
+    const result = _.filter(state.app.schedules, (item) => {
+        return ids.includes(item.id);
+    });
+    return result ?? [];
+};
 export const getSelectedScheduleId = (state: RootState): number => state.app.selectedScheduleId;
 
 /**

@@ -7,6 +7,7 @@ export interface AppState extends DefaultRootState {
     status: AppStatusSectionsState;
     selectedScheduleId?: number;
     schedules: ScheduleState[];
+    visibleScheduleIds: number[];
     scheduleLogs: ScheduleLogState[];
     texts: {
         header: HeaderTextStatus;
