@@ -106,7 +106,7 @@ const mapStateToProps = (state: RootState): ScheduleLogsStateProps => {
     const logs = getScheduleLogs(state);
     return {
         isSelected: !!id,
-        scheduleName: !!id && !!schedules && schedules.find(n => n.id === id).name,
+        scheduleName: !!id && !!schedules && schedules.find(n => n.id === id)?.name,
         status: getScheduleLogsStatus(state),
         logs: !!id && !!logs && logs.filter(n => n.scheduleId === id),
         texts: getScheduleLogsText(state),
