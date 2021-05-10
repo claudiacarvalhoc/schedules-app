@@ -36,53 +36,56 @@ const ScheduleLogs: FC<ScheduleLogsProps> = ({
   fetchScheduleLogs,
   resetSelectedSchedule,
  }) => {
-
   const isSuccessfull = status === StatusState.Success;
   const isFailure = status === StatusState.Failure;
-
-  if (!isSelected && isSuccessfull) {
-    return (<div className={styles.info}>
-      <p>{texts.noSelectedScheduleText}</p>
-    </div>);
-  }
-
   const hasLogItems = Array.isArray(logs) && logs.length > 0;
+
   return (
   <>
-  <div>
-      {isFailure && (
-        <div className={styles.failure}>
-          <p>{texts.errorMessageText}</p>
-          <Button
-            onClick={() => fetchScheduleLogs()}
-            variant="contained"
-            color="primary"
-            disableElevation>
-            {texts.buttonRetryText}
-          </Button>
-        </div>
-      )}
-
-      {isSuccessfull && !hasLogItems &&  (
-        <div className={styles.info}>
-          <p>{texts.emptyMessageText}</p>
-        </div>
-      )}
-
-      <div className={styles.overlay} onClick={() => resetSelectedSchedule()} />
-      {isSuccessfull && !hasLogItems &&  (
-        <div className={styles.emptySuccess}>
-          <p>{texts.emptyMessageText}</p>
-        </div>
-      )}
-      {isSuccessfull && hasLogItems && (
+    {/* No Schedule Selected */}
+    {!isSelected && (<div className={styles.noinfo}>
+      <p>{texts.noSelectedScheduleText}</p>
+    </div>)}
+    {isSelected && (
+      <>
+        {/* Mobile overlay */}
+        <div className={styles.overlay} onClick={() => resetSelectedSchedule()} />
         <div className={styles.schedulelogs}>
+          <>
+            {/* Mobile Title */}
             <Typography className={styles.modalTitle} variant="h6">{scheduleName}</Typography>
-            <div className={styles.items}>
-              {logs.map(n => <LogItem key={n.id} item={n} />)}
-            </div>
-        </div>)}
-    </div>
+            {/* FAILURE */}
+            {isFailure && (
+              <div className={styles.failure}>
+                <Typography className={styles.failureTitle} variant="body2" component="p">
+                  {texts.errorMessageText}
+                </Typography>
+                <Button
+                  className={styles.retryButton}
+                  onClick={() => fetchScheduleLogs()}
+                  variant="contained"
+                  color="primary"
+                  disableElevation>
+                  {texts.buttonRetryText}
+                </Button>
+              </div>
+            )}
+            {/* SUCCESS WITHOUT DATA */}
+            {isSuccessfull && !hasLogItems &&  (
+              <div className={styles.emptySuccess}>
+                <p>{texts.emptyMessageText}</p>
+              </div>
+            )}
+            {/*  SUCCESS WITH DATA */}
+            {isSuccessfull && hasLogItems && (
+              <div className={styles.items}>
+                {logs.map(n => <LogItem key={n.id} item={n} />)}
+              </div>
+            )}
+          </>
+        </div>
+      </>
+  )}
   </>);
  };
 
@@ -92,9 +95,9 @@ const mapStateToProps = (state: RootState): ScheduleLogsStateProps => {
     const logs = getScheduleLogs(state);
     return {
         isSelected: !!id,
-        scheduleName: !!id && schedules.find(n => n.id === id).name,
+        scheduleName: !!id && !!schedules && schedules.find(n => n.id === id).name,
         status: getScheduleLogsStatus(state),
-        logs: !!id && logs.filter(n => n.scheduleId === id),
+        logs: !!id && !!logs && logs.filter(n => n.scheduleId === id),
         texts: getScheduleLogsText(state),
     };
 };

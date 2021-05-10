@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { Component } from 'react';
 import { getHeaderTexts } from '../../redux/app/selectors';
 import { RootState } from '../../redux/reducers';
 import { connect } from 'react-redux';
@@ -17,30 +17,45 @@ export interface HeaderStateProps {
 
 export type HeaderProps = HeaderOwnProps & HeaderStateProps;
 
-const Header: FC<HeaderProps> = ({
-  title,
- }) => {
-  return (
-  <div className={styles.container}>
-      <AppBar position="static">
-        <Toolbar className={styles.bar}>
-          <Typography variant="h6">{title}</Typography>
-          <div className={styles.search}>
-              <InputBase
-                placeholder="Search…"
-                classes={{
-                  root: styles.inputRoot,
-                  input: styles.inputInput,
-                }}
-                inputProps={{ 'aria-label': 'search' }}
-              />
-          </div>
-          <MenuIcon />
-        </Toolbar>
-      </AppBar>
-    </div>
+class Header extends Component<HeaderProps> {
+  constructor(props) {
+    super(props);
+    this.state = {
+      search: '',
+    };
+  }
+  componentDidMount() {
+    // document.addEventListener("keydown", this._handleKeyDown);
+  }
+  componentWillUnmount() {
+    // document.addEventListener("keydown", this._handleKeyDown);
+  }
+
+  render() {
+    const { title } = this.props;
+    return (
+      <div className={styles.container}>
+        <AppBar position="static">
+          <Toolbar className={styles.bar}>
+            <Typography variant="h6">{title}</Typography>
+            <div className={styles.search}>
+                <InputBase
+                  placeholder="Search…"
+                  classes={{
+                    root: styles.inputRoot,
+                    input: styles.inputInput,
+                  }}
+                  inputProps={{ 'aria-label': 'search' }}
+
+                />
+            </div>
+            <MenuIcon />
+          </Toolbar>
+        </AppBar>
+      </div>
     );
- };
+  }
+}
 
 const mapStateToProps = (state: RootState): HeaderStateProps => ({
     title: getHeaderTexts(state).titleText,

@@ -22,25 +22,28 @@
     display: none;
 }
 
-.emptySuccess {
-
+.noinfo {
 }
 
 @media (max-width: 480px) {
     .schedulelogs {
-        position: absolute;
+        position: fixed;
         z-index: 2;
         display: block;
         top: 0px;
-        margin: 2%;
+        margin-top: 5%;
+        margin-bottom: 7%;
+        margin-right: 2%;
         padding: 2%;
         background-color: #3f51b5;
+        overflow: scroll;
+        height: 90%;
+        width: 92%;
     }
     .overlay {
         display: block;
     }
     .modal {
-        padding: 5%;
         background-color: #3f51b5;
     }
     .modalTitle {
@@ -49,10 +52,22 @@
         text-align: center;
     }
     .failure {
-        display: none;
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        justify-content: center;
+        height: 450px;
     }
-    .emptySuccess {
-
+    .failureTitle {
+        color: #fff;
+        text-align: center;
+    }
+    .retryButton {
+        background-color: #fff !important;
+        color: #3f51b5 !important;
+    }
+    .noinfo {
+        display: none;
     }
 }
 

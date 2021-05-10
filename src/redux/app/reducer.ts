@@ -13,7 +13,8 @@ export const appReducer = (
         case LOADING_SCHEDULES_STATUS: {
             return {
                 ...state,
-                schedules: action.schedules,
+                schedules: [],
+                selectedScheduleId: undefined,
                 status: {
                     ...state.status,
                     schedules: StatusState.Loading,
@@ -23,7 +24,8 @@ export const appReducer = (
         case LOADING_SCHEDULELOGS_STATUS: {
             return {
                 ...state,
-                schedules: action.schedules,
+                scheduleLogs: [],
+                selectedScheduleId: undefined,
                 status: {
                     ...state.status,
                     scheduleLogs: StatusState.Loading,

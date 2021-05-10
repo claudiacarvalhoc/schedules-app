@@ -17,4 +17,7 @@
     .content {
         display: block;
     }
+    .container {
+        margin: 2%;
+    }
 }
